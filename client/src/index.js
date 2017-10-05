@@ -5,7 +5,6 @@ import registerServiceWorker from './registerServiceWorker';
 
 import './index.css';
 import muiTheme from './config/theme';
-
 import Layout from './components/Layout';
 import Login from './containers/Login';
 

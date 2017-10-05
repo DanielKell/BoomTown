@@ -4,9 +4,9 @@ import RaisedButton from 'material-ui/RaisedButton';
 import './styles.css';
 
 const ItemCard = () => {
-
+    // Add these styles to my cards: display: inline-block;
     return (
-                <Card className="one-item-card">
+                <Card style={{display:"inline-block"}} className="one-item-card" >
                         {/*<CardMedia
                             overlay={<CardTitle title="Overlay title" subtitle="Overlay subtitle" />}
                         > NEED TO MAKE THIS OVERLAY LOAD CONDITIONALLY ON WHETHER SOMETHING IS BORROWED*/}
