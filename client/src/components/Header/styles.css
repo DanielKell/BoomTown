@@ -1,0 +1,18 @@
+.logo {
+    height: 50px;
+}
+
+.app-bar {
+    height: 70px;
+    width: 100%;
+}
+
+.logo-and-filter {
+    display: flex;
+    justify-content: flex-start;
+    width: 50vw;
+}
+
+.header-buttons {
+    margin-top: 10px;
+}
