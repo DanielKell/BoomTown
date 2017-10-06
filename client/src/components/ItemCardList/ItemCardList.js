@@ -1,7 +1,7 @@
 import React from 'react';
 import ItemCard from '../ItemCard/ItemCard';
 
-const ItemCardList = ({itemCardData, itemUserData}) => {
+const ItemCardList = ({itemCardData}) => {
 
     return (
         <div>
