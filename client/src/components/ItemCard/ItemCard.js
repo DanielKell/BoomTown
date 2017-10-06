@@ -3,32 +3,28 @@ import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'mat
 import RaisedButton from 'material-ui/RaisedButton';
 import './styles.css';
 
-const ItemCard = () => {
-    // Add these styles to my cards: display: inline-block;
+const ItemCard = ({itemCardData}) => {
+
     return (
-                <Card style={{display:"inline-block"}} className="one-item-card" >
-                        {/*<CardMedia
-                            overlay={<CardTitle title="Overlay title" subtitle="Overlay subtitle" />}
-                        > NEED TO MAKE THIS OVERLAY LOAD CONDITIONALLY ON WHETHER SOMETHING IS BORROWED*/}
-                            {/*<img src="images/nature-600-337.jpg" alt="" />
-                        </CardMedia>  */}
-                        <CardHeader
-                        title="Daniel Kell"
-                        subtitle="3 days ago"
-                        />
+        <Card style={{display:"inline-block", margin: "20px 10px"}} className="one-item-card" >
+            <CardMedia>
+            {/*overlay={<CardTitle title="Overlay title" subtitle="Overlay subtitle" />}*/}
+            <img src={itemCardData.imageUrl} alt="" />
+            </CardMedia>  
+            <CardHeader
+            title="Daniel Kell"
+            subtitle="3 days ago"
+            />
 
-                    <CardTitle title="Card title" subtitle="Card subtitle" />
+            <CardTitle title={itemCardData.title} subtitle={itemCardData.tags[0]} />
 
-                    <CardText>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
-                    Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
-                    Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
-                    </CardText>
-                    <CardActions>
-                        <RaisedButton label="Borrow" />
-                    </CardActions>
-                </Card>
+            <CardText>
+                {itemCardData.description}
+            </CardText>  
+            <CardActions>
+                <RaisedButton label="Borrow" primary={true} backgroundColor="black" labelColor="white"/>
+            </CardActions>
+        </Card>
     );
 }
 
