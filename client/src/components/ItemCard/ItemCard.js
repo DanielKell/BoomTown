@@ -4,29 +4,28 @@ import RaisedButton from 'material-ui/RaisedButton';
 import './styles.css';
 import Gravatar from 'react-gravatar';
 
-const ItemCard = ({itemCardData}) => {
+const ItemCard = ({CardAndUserData}) => {
 
     return (
         <Card style={{display:"inline-block", margin: "20px 10px"}} className="one-item-card" >
             <CardMedia 
-                overlay={<CardTitle subtitle="UNAVAILABLE" />}
-                >
-            <img src={itemCardData.imageUrl} alt="" />
+                overlay={!CardAndUserData.available?<CardTitle subtitle="UNAVAILABLE" />:false}
+            >
+            <img src={CardAndUserData.imageUrl} alt="" />
             </CardMedia>  
-            {/*<CardHeader
-                 title={itemCardData.itemOwner.fullName}
-                 subtitle="Subtitle"
-                 avatar={<Gravatar email={itemCardData.itemOwner.email} />}
-            />*/}
-
+            <CardHeader
+                 title={CardAndUserData.user.fullName}
+                 subtitle={CardAndUserData.createdOn}
+                 avatar={<Gravatar email={CardAndUserData.user.email} />}
+            />
             <CardTitle 
-                title={itemCardData.title} 
-                subtitle={itemCardData.tags.map( ( anObjectMapped, index ) => {
+                title={CardAndUserData.title} 
+                subtitle={CardAndUserData.tags.map( ( anObjectMapped, index ) => {
                     return <p key={index}>{anObjectMapped}</p>
                 } ) }
             />
             <CardText>
-                {itemCardData.description}
+                {CardAndUserData.description}
             </CardText>  
             <CardActions>
                 <RaisedButton label="Borrow" primary={true} backgroundColor="black" labelColor="white"/>

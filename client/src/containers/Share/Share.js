@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 class Share extends Component {
-    state = {  }
+
     render() {
         return (
             <h1>This is the share page</h1>
