@@ -1,13 +1,16 @@
 import React from 'react';
 import ItemCard from '../ItemCard/ItemCard';
 
-const ItemCardList = ({itemCardData}) => {
-console.log(itemCardData);
+const ItemCardList = ({itemCardData, itemUserData}) => {
+
     return (
         <div>
            { itemCardData.map((item) => (
-            <ItemCard itemCardData={item} key={item.id} />
-        )) }
+                <ItemCard 
+                    itemCardData={item} 
+                    key={item.id} 
+                />
+              )) }
         </div>
     );
 }

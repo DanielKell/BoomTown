@@ -17,7 +17,8 @@ class Items extends Component {
         super(props);
 
         this.state = {
-            itemCardData: []
+            itemCardData: [],
+            itemUserData: []
         };
     }
 
@@ -30,6 +31,15 @@ class Items extends Component {
                 });
             console.log(this.state);
             console.log(this.state.itemCardData);
+        })
+        
+        fetch('http://localhost:3001/users')
+            .then(response => response.json())
+            .then(data => {
+                this.setState({
+                    itemUserData: data,
+                });
+            console.log(this.state.itemUserData);
             })
 }
 
@@ -37,6 +47,7 @@ render() {
     return ( 
         <ItemCardList 
             itemCardData = {this.state.itemCardData}
+            itemUserData = {this.state.itemUserData}
         />
     );
 }
