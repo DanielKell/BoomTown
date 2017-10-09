@@ -1,12 +1,14 @@
 import React, {Component} from 'react';
 import ItemCardList from '../../components/ItemCardList/ItemCardList';
+import Loader from '../../components/Loader';
 
 class Items extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            itemCardData: []
+            itemCardData: [],
+            loading: true
         };
     }
 
@@ -50,7 +52,8 @@ class Items extends Component {
             })
  
              this.setState({
-                 itemCardData: itemsWithUsers
+                 itemCardData: itemsWithUsers,
+                 loading: false
              });
              
          })
@@ -59,8 +62,12 @@ class Items extends Component {
 }
         
 render() {
-    console.log(this.state.itemCardData);
+
+    if (this.state.loading) return <Loader />
+
+
     return ( 
+        
         
         <ItemCardList 
             itemCardData = {this.state.itemCardData}
