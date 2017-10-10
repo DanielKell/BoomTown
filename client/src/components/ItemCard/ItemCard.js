@@ -6,6 +6,9 @@ import Gravatar from 'react-gravatar';
 
 const ItemCard = ({CardAndUserData}) => {
 
+const moment = require('moment');
+moment().format();
+
     return (
         <li className="one-item-card">
             <Card >
@@ -16,7 +19,7 @@ const ItemCard = ({CardAndUserData}) => {
                 </CardMedia>  
                 <CardHeader
                     title={CardAndUserData.user.fullName}
-                    subtitle={CardAndUserData.createdOn}
+                    subtitle={(moment.unix(CardAndUserData.createdOn)).fromNow()}
                     //Use Moment to translate this into a previous date. First translate the number, then use .fromNow()
                     avatar={<Gravatar email={CardAndUserData.user.email} className="gravatar-image"/>}
                 />
