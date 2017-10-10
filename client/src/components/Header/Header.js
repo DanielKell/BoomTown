@@ -1,7 +1,8 @@
 import React from 'react';
 import AppBar from 'material-ui/AppBar';
-import FilterField from '../SelectField/SelectField';
+import { Link } from 'react-router-dom';
 
+import FilterField from '../SelectField/SelectField';
 import RaisedButton from 'material-ui/RaisedButton';
 import './styles.css';
 import logo from '../../images/boomtown-logo.svg';
@@ -12,7 +13,9 @@ const Header = () => {
         <AppBar className= "app-bar" title="" style={{'background-color': 'white'}} iconElementLeft = { 
             <div className="logo-and-filter">
                 <div>
-                    <img className="logo" src={logo} alt="Boomtown Logo" />
+                    <Link to="/">
+                        <img className="logo" src={logo} alt="Boomtown Logo" />
+                    </Link>
                 </div>
 
                 <div>

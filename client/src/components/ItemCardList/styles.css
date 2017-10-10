@@ -1,5 +1,4 @@
-/*.item-card-list {
-    width: 100%;
-    max-width: 700px;
-
-}*/
+.masonry-styling {
+    width: 100vw;
+    margin: 0 auto;
+}

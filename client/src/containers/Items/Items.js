@@ -64,11 +64,7 @@ class Items extends Component {
 render() {
 
     if (this.state.loading) return <Loader />
-
-
     return ( 
-        
-        
         <ItemCardList 
             itemCardData = {this.state.itemCardData}
         />

@@ -1,6 +1,9 @@
 .one-item-card {
-    display:flex;
-    flex-direction: row;
     width: 31%;
     min-width: 300px;
+    margin: 10px 10px;
+}
+
+.gravatar-image {
+    border-radius: 50px;
 }

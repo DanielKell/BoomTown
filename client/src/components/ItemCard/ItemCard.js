@@ -7,8 +7,8 @@ import Gravatar from 'react-gravatar';
 const ItemCard = ({CardAndUserData}) => {
 
     return (
-        <li>
-            <Card style={{display:"inline-block", margin: "20px 10px"}} className="one-item-card" >
+        <li className="one-item-card">
+            <Card >
                 <CardMedia 
                     overlay={!CardAndUserData.available?<CardTitle subtitle="UNAVAILABLE" />:false}
                 >
@@ -17,19 +17,20 @@ const ItemCard = ({CardAndUserData}) => {
                 <CardHeader
                     title={CardAndUserData.user.fullName}
                     subtitle={CardAndUserData.createdOn}
-                    avatar={<Gravatar email={CardAndUserData.user.email} />}
+                    //Use Moment to translate this into a previous date. First translate the number, then use .fromNow()
+                    avatar={<Gravatar email={CardAndUserData.user.email} className="gravatar-image"/>}
                 />
                 <CardTitle 
                     title={CardAndUserData.title} 
-                    subtitle={CardAndUserData.tags.map( ( anObjectMapped, index ) => {
-                        return <p key={index}>{anObjectMapped}</p>
-                    } ) }
+                    subtitle={CardAndUserData.tags.join(', ')}
                 />
                 <CardText>
                     {CardAndUserData.description}
                 </CardText>  
                 <CardActions>
-                    <RaisedButton label="Borrow" primary={true} backgroundColor="black" labelColor="white"/>
+                    {CardAndUserData.available
+                    ? <RaisedButton label="Borrow" primary={true} backgroundColor="black" labelColor="white"/>
+                    :false}
                 </CardActions>
             </Card>
         </li>

@@ -2,6 +2,7 @@ import React from 'react';
 import Masonry from 'react-masonry-component';
 
 import ItemCard from '../ItemCard/ItemCard';
+import './styles.css';
 
 const ItemCardList = ({itemCardData}) => {
 
