@@ -7,8 +7,9 @@ const FilterField = () => {
     return(
         <div>
             <SelectField 
-                floatingLabelText="Filters">
-
+                floatingLabelText="Filter by Tag"
+                multiple
+            >
                 <MenuItem value={1} primaryText="Electronics" />
                 <MenuItem value={2} primaryText="Household Items" />
                 <MenuItem value={3} primaryText="Musical Instruments" />

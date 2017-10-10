@@ -20,7 +20,6 @@ moment().format();
                 <CardHeader
                     title={CardAndUserData.user.fullName}
                     subtitle={(moment.unix(CardAndUserData.createdOn)).fromNow()}
-                    //Use Moment to translate this into a previous date. First translate the number, then use .fromNow()
                     avatar={<Gravatar email={CardAndUserData.user.email} className="gravatar-image"/>}
                 />
                 <CardTitle 

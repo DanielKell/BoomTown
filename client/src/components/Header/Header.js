@@ -2,7 +2,7 @@ import React from 'react';
 import AppBar from 'material-ui/AppBar';
 import { Link } from 'react-router-dom';
 
-import FilterField from '../SelectField/SelectField';
+import FilterField from '../FilterField/FilterField';
 import RaisedButton from 'material-ui/RaisedButton';
 import './styles.css';
 import logo from '../../images/boomtown-logo.svg';
@@ -14,28 +14,32 @@ const Header = () => {
             <div className="logo-and-filter">
                 <div>
                     <Link to="/">
-                        <img className="logo" src={logo} alt="Boomtown Logo" />
+                        <img className="header-logo" src={logo} alt="Boomtown Logo" />
                     </Link>
                 </div>
 
-                <div>
-                    <FilterField />
+                <div className="filter-field">
+                    <FilterField 
+                    />
                 </div>
             </div>
             } 
             
             iconElementRight = {
             <div className="header-buttons">
-                <RaisedButton 
-                    label="My Profile"
-                    primary={true}
-                /> 
-
-                <RaisedButton 
-                    label="Logout" 
-                    labelColor="white"
-                    backgroundColor="black" 
-                />
+                <Link to="/profile/1">
+                    <RaisedButton className="profile-button"
+                        label="My Profile"
+                        primary={true}
+                    /> 
+                </Link>
+                <Link to="/login">
+                    <RaisedButton 
+                        label="Logout" 
+                        labelColor="white"
+                        backgroundColor="black" 
+                    />
+                </Link>
             </div>
             }>
 

@@ -1,6 +1,11 @@
 import React, {Component} from 'react';
+import FloatingActionButton from 'material-ui/FloatingActionButton';
+import ContentAdd from 'material-ui/svg-icons/content/add';
+import { Link } from 'react-router-dom';
+
 import ItemCardList from '../../components/ItemCardList/ItemCardList';
 import Loader from '../../components/Loader';
+import './styles.css';
 
 class Items extends Component {
     constructor(props) {
@@ -65,9 +70,14 @@ render() {
 
     if (this.state.loading) return <Loader />
     return ( 
-        <ItemCardList 
-            itemCardData = {this.state.itemCardData}
-        />
+        <div>
+        <ItemCardList itemCardData = {this.state.itemCardData} />
+            <Link to="/share">
+                <FloatingActionButton className="share-button" backgroundColor="black">
+                    <ContentAdd />
+                </FloatingActionButton>
+            </Link>
+        </div>
     );
 }
 }
