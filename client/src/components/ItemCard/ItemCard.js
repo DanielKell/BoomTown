@@ -13,7 +13,7 @@ moment().format();
         <li className="one-item-card">
             <Card >
                 <CardMedia 
-                    overlay={!CardAndUserData.available?<CardTitle subtitle="UNAVAILABLE" />:false}
+                    overlay={!CardAndUserData.available && <CardTitle subtitle="UNAVAILABLE" />}
                 >
                 <img src={CardAndUserData.imageUrl} alt="" />
                 </CardMedia>  
