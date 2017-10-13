@@ -77,15 +77,19 @@ render() {
             </Link>
         </div>
     );
+
 }
 }
 
+//Note: Should try to refactor and separate item data and user data, and can them put them together in the below function
 const mapStateToProps = (state) => {
     return {
         itemCardData: state.cardAndUserData.itemCardData,
         loading: state.cardAndUserData.loading
     };
 }
+
+
 
 export default connect(mapStateToProps)(Items);
 

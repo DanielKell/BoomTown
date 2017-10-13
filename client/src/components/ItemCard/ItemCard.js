@@ -19,7 +19,7 @@ moment().format();
                 </CardMedia>  
                 <CardHeader
                     title={CardAndUserData.user.fullName}
-                    subtitle={(moment.unix(CardAndUserData.createdOn)).fromNow()}
+                    subtitle={(moment(CardAndUserData.createdOn)).fromNow()}
                     avatar={<Gravatar email={CardAndUserData.user.email} className="gravatar-image"/>}
                 />
                 <CardTitle 

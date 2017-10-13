@@ -9,7 +9,7 @@
         "Household Items"
       ],
       "itemOwner": "TyHcYnSocuOg6PmWQivgxerTLcq2",
-      "createdOn": 1497558858,
+      "createdOn": "2017-08-09",
       "available": true,
       "borrower": null
     },
@@ -23,7 +23,7 @@
         "Recreational Equipment"
       ],
       "itemOwner": "dQg4HT262FYOiuOUIRj1xrXjOva2",
-      "createdOn": 1497546618,
+      "createdOn": "2017-08-08",
       "available": false,
       "borrower": "LAi9TYWxgGhbjgHu1Sm6ZvB1tRP2"
     },
@@ -36,7 +36,7 @@
         "Musical Instruments"
       ],
       "itemOwner": "LAi9TYWxgGhbjgHu1Sm6ZvB1tRP2",
-      "createdOn": 1497534618,
+      "createdOn": "2017-09-18",
       "available": true,
       "borrower": null
     },
@@ -49,7 +49,7 @@
         "Tools"
       ],
       "itemOwner": "dQg4HT262FYOiuOUIRj1xrXjOva2",
-      "createdOn": 1497504600,
+      "createdOn": "2017-09-08",
       "available": true,
       "borrower": null
     },
@@ -62,7 +62,7 @@
         "Physical Media"
       ],
       "itemOwner": "TyHcYnSocuOg6PmWQivgxerTLcq2",
-      "createdOn": 1497489120,
+      "createdOn": "2017-09-08",
       "available": false,
       "borrower": "dQg4HT262FYOiuOUIRj1xrXjOva2"
     },
@@ -75,7 +75,7 @@
         "Physical Media"
       ],
       "itemOwner": "TyHcYnSocuOg6PmWQivgxerTLcq2",
-      "createdOn": 1497466800,
+      "createdOn": "2017-08-08",
       "available": true,
       "borrower": null
     },
@@ -88,7 +88,7 @@
         "Musical Instruments"
       ],
       "itemOwner": "LAi9TYWxgGhbjgHu1Sm6ZvB1tRP2",
-      "createdOn": 1497433740,
+      "createdOn": "2017-08-08",
       "available": true,
       "borrower": null
     },
@@ -102,7 +102,7 @@
         "Sporting Goods"
       ],
       "itemOwner": "TyHcYnSocuOg6PmWQivgxerTLcq2",
-      "createdOn": 1497406380,
+      "createdOn": "2017-08-08",
       "available": false,
       "borrower": "LAi9TYWxgGhbjgHu1Sm6ZvB1tRP2"
     },
@@ -115,7 +115,7 @@
         "Sporting Goods"
       ],
       "itemOwner": "LAi9TYWxgGhbjgHu1Sm6ZvB1tRP2",
-      "createdOn": 1497398220,
+      "createdOn": "2017-08-08",
       "available": false,
       "borrower": "TyHcYnSocuOg6PmWQivgxerTLcq2"
     },
@@ -128,7 +128,7 @@
         "Household Items"
       ],
       "itemOwner": "TyHcYnSocuOg6PmWQivgxerTLcq2",
-      "createdOn": 1497377580,
+      "createdOn": "2017-09-08",
       "available": true,
       "borrower": null
     },
@@ -141,7 +141,7 @@
         "Electronics"
       ],
       "itemOwner": "dQg4HT262FYOiuOUIRj1xrXjOva2",
-      "createdOn": 1497365340,
+      "createdOn": "2017-08-08",
       "available": true,
       "borrower": null
     },
@@ -154,7 +154,7 @@
         "Electronics"
       ],
       "itemOwner": "dQg4HT262FYOiuOUIRj1xrXjOva2",
-      "createdOn": 1497333660,
+      "createdOn": "2017-08-08",
       "available": false,
       "borrower": "TyHcYnSocuOg6PmWQivgxerTLcq2"
     },
@@ -167,7 +167,7 @@
         "Physical Media"
       ],
       "itemOwner": "TyHcYnSocuOg6PmWQivgxerTLcq2",
-      "createdOn": 1497313680,
+      "createdOn": "2017-08-08",
       "available": true,
       "borrower": null
     },
@@ -180,7 +180,7 @@
         "Electronics"
       ],
       "itemOwner": "LAi9TYWxgGhbjgHu1Sm6ZvB1tRP2",
-      "createdOn": 1497280260,
+      "createdOn": "2017-08-08",
       "available": true,
       "borrower": null
     },
@@ -193,7 +193,7 @@
         "Electronics"
       ],
       "itemOwner": "dQg4HT262FYOiuOUIRj1xrXjOva2",
-      "createdOn": 1497264000,
+      "createdOn": "2017-08-08",
       "available": true,
       "borrower": null
     },
@@ -206,7 +206,7 @@
         "Tools"
       ],
       "itemOwner": "TyHcYnSocuOg6PmWQivgxerTLcq2",
-      "createdOn": 1497238620,
+      "createdOn": "2017-08-08",
       "available": false,
       "borrower": "dQg4HT262FYOiuOUIRj1xrXjOva2"
     },
@@ -219,7 +219,7 @@
         "Recreational Equipment"
       ],
       "itemOwner": "LAi9TYWxgGhbjgHu1Sm6ZvB1tRP2",
-      "createdOn": 1497196860,
+      "createdOn": "2017-08-08",
       "available": true,
       "borrower": null
     },
@@ -232,7 +232,7 @@
         "Recreational Equipment"
       ],
       "itemOwner": "dQg4HT262FYOiuOUIRj1xrXjOva2",
-      "createdOn": 1497144600,
+      "createdOn": "2017-08-08",
       "available": true,
       "borrower": null
     },
@@ -245,7 +245,7 @@
         "Electronics"
       ],
       "itemOwner": "dQg4HT262FYOiuOUIRj1xrXjOva2",
-      "createdOn": 1497120540,
+      "createdOn": "2017-08-08",
       "available": true,
       "borrower": null
     },
@@ -258,7 +258,7 @@
         "Tools"
       ],
       "itemOwner": "TyHcYnSocuOg6PmWQivgxerTLcq2",
-      "createdOn": 1497072300,
+      "createdOn": "2017-08-08",
       "available": false,
       "borrower": "LAi9TYWxgGhbjgHu1Sm6ZvB1tRP2"
     },
@@ -271,7 +271,7 @@
         "Household Items"
       ],
       "itemOwner": "LAi9TYWxgGhbjgHu1Sm6ZvB1tRP2",
-      "createdOn": 1497044400,
+      "createdOn": "2017-08-08",
       "available": true,
       "borrower": null
     }

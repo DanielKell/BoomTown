@@ -4,7 +4,7 @@ const FETCH_DATA = "FETCH_DATA";
 
 //Action
 
-export function fetchingData (itemsWithUsers) {
+export function fetchingData(itemsWithUsers) {
     return {
         type: FETCH_DATA,
         payload: itemsWithUsers
@@ -13,40 +13,40 @@ export function fetchingData (itemsWithUsers) {
 
 //Helper
 
-    export function fetchCardData() {
-        return (dispatch) => {
+export function fetchCardData() {
+    return (dispatch) => {
         Promise.all(['http://localhost:3001/items', 'http://localhost:3001/users'].map(url => (
-            fetch(url).then(response => response.json()))))
+                fetch(url).then(response => response.json()))))
             .then(json => {
-            const [item, users] = json;
+                const [item, users] = json;
 
-            const itemsWithUsers = item.map(item => {
-                return {
-                    id: item.id,
-                    title: item.title,
-                    description: item.description,
-                    imageUrl: item.imageUrl,
-                    tags: item.tags,
-                    createdOn: item.createdOn,
-                    available: item.available,
-                    borrower: item.borrower,
-                    user: users.find(user => user.id === item.itemOwner)
-                }
+                const itemsWithUsers = item.map(item => {
+                    return {
+                        id: item.id,
+                        title: item.title,
+                        description: item.description,
+                        imageUrl: item.imageUrl,
+                        tags: item.tags,
+                        createdOn: item.createdOn,
+                        available: item.available,
+                        borrower: item.borrower,
+                        user: users.find(user => user.id === item.itemOwner)
+                    }
+                })
+                dispatch(fetchingData(itemsWithUsers));
             })
-            dispatch(fetchingData(itemsWithUsers));           
-         })
-        };
-    }
+    };
+}
 
 //Reducer
 
 const initialState = {
-                 itemCardData: [],
-                 loading: true
-             };
+    itemCardData: [],
+    loading: true
+};
 
 export default function (state = initialState, action) {
-    switch(action.type) {
+    switch (action.type) {
         case FETCH_DATA:
 
             const stateAndData = {
