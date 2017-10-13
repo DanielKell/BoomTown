@@ -2,22 +2,19 @@ import React, {Component} from 'react';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import ItemCardList from '../../components/ItemCardList/ItemCardList';
 import Loader from '../../components/Loader';
 import './styles.css';
+import {fetchCardData} from '../../redux/modules/card_data';
 
 class Items extends Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            itemCardData: [],
-            loading: true
-        };
-    }
 
     componentDidMount() {
+
+        this.props.dispatch(fetchCardData());
+
         // fetch('http://localhost:3001/items')
         //     .then(response => response.json())
         //     .then(data => {
@@ -37,41 +34,42 @@ class Items extends Component {
         //     console.log(this.state.itemUserData);
         //     })
 
-        Promise.all(['http://localhost:3001/items', 'http://localhost:3001/users'].map(url => (
-            fetch(url).then(response => response.json()))))
-            .then(json => {
-            const [item, users] = json;
+        // Promise.all(['http://localhost:3001/items', 'http://localhost:3001/users'].map(url => (
+        //     fetch(url).then(response => response.json()))))
+        //     .then(json => {
+        //     const [item, users] = json;
 
-            const itemsWithUsers = item.map(item => {
-                return {
-                    id: item.id,
-                    title: item.title,
-                    description: item.description,
-                    imageUrl: item.imageUrl,
-                    tags: item.tags,
-                    createdOn: item.createdOn,
-                    available: item.available,
-                    borrower: item.borrower,
-                    user: users.find(user => user.id === item.itemOwner)
-                }
-            })
+        //     const itemsWithUsers = item.map(item => {
+        //         return {
+        //             id: item.id,
+        //             title: item.title,
+        //             description: item.description,
+        //             imageUrl: item.imageUrl,
+        //             tags: item.tags,
+        //             createdOn: item.createdOn,
+        //             available: item.available,
+        //             borrower: item.borrower,
+        //             user: users.find(user => user.id === item.itemOwner)
+        //         }
+        //     })
  
-             this.setState({
-                 itemCardData: itemsWithUsers,
-                 loading: false
-             });
+        //      this.setState({
+        //          itemCardData: itemsWithUsers,
+        //          loading: false
+        //      });
              
-         })
-         .catch(error => console.log(error));
-         
+        //  })
+        //  .catch(error => console.log(error));
+
 }
         
 render() {
 
-    if (this.state.loading) return <Loader />
+    if (this.props.loading) return <Loader />
+
     return ( 
         <div>
-        <ItemCardList itemCardData = {this.state.itemCardData} />
+        <ItemCardList itemCardData = {this.props.itemCardData} />
             <Link to="/share">
                 <FloatingActionButton className="share-button" backgroundColor="black">
                     <ContentAdd />
@@ -82,4 +80,13 @@ render() {
 }
 }
 
-export default Items;
+const mapStateToProps = (state) => {
+    return {
+        itemCardData: state.cardAndUserData.itemCardData,
+        loading: state.cardAndUserData.loading
+    };
+}
+
+export default connect(mapStateToProps)(Items);
+
+// export default Items;

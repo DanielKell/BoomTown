@@ -1,11 +1,7 @@
 import { combineReducers } from 'redux';
-//import reducers here
+
+import fetchDataReducer from './modules/card_data';
 
 export default combineReducers({
-    // items,
-    // itemsHasErrored,
-    // itemsIsLoading,
-    // posts,
-    // postsHasErrored,
-    // postsIsLoading
+    cardAndUserData: fetchDataReducer
 });

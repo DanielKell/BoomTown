@@ -30,9 +30,9 @@ export function fetchingData (itemsWithUsers) {
                     borrower: item.borrower,
                     user: users.find(user => user.id === item.itemOwner)
                 }
-            })             
+            })
+            dispatch(fetchingData(itemsWithUsers));           
          })
-         dispatch(fetchingData(itemsWithUsers));
         };
     }
 
@@ -46,7 +46,12 @@ const initialState = {
 export default function (state = initialState, action) {
     switch(action.type) {
         case FETCH_DATA:
-            return action.payload
+
+            const stateAndData = {
+                itemCardData: action.payload,
+                loading: false
+            };
+            return stateAndData;
     }
     return state;
 }
