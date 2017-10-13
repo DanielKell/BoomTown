@@ -11,8 +11,10 @@ export function fetchingData (itemsWithUsers) {
     };
 }
 
+//Helper
+
     export function fetchCardData() {
-        return function (dispatch) {
+        return (dispatch) => {
         Promise.all(['http://localhost:3001/items', 'http://localhost:3001/users'].map(url => (
             fetch(url).then(response => response.json()))))
             .then(json => {
