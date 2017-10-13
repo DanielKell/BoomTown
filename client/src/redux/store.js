@@ -3,13 +3,6 @@ import thunk from 'redux-thunk';
 
 import rootReducer from './root_reducer';
 
-// export default function configureStore() {
-//     return createStore(
-//         rootReducer,
-//         applyMiddleware(thunk)
-//     );
-// }
-
 export default createStore(
     rootReducer,
     applyMiddleware(thunk)
