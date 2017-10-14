@@ -111,6 +111,8 @@ export default function (state = initialState, action) {
                 ...state,
                 justUserData: action.payload
             };
+
+        default:
+         return state;
     }
-    return state;
 }

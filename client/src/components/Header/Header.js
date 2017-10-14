@@ -27,7 +27,7 @@ const Header = () => {
             
             iconElementRight = {
             <div className="header-buttons">
-                <Link to="/profile/1">
+                <Link to="/profile/LAi9TYWxgGhbjgHu1Sm6ZvB1tRP2">
                     <RaisedButton className="profile-button"
                         label="My Profile"
                         primary={true}

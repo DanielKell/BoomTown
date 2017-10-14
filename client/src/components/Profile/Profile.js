@@ -1,18 +1,22 @@
 import React from 'react';
+import {Card, CardHeader, CardTitle} from 'material-ui/Card';
+import Gravatar from 'react-gravatar';
 
 import './styles.css';
-import {Card, CardHeader, CardTitle} from 'material-ui/Card';
 
-const Profile = ({itemCardData}) => {
-    console.log(itemCardData);
+
+const Profile = ({singleUserData}) => {
+        console.log(singleUserData);
+
     return (
 
         <div className="profile-card">
+            
             <Card>
-                <CardTitle title="NAME" subtitle="Name's description" />
+                <CardTitle title={singleUserData.fullName} subtitle={singleUserData.bio} />
                 <CardTitle title="0" subtitle="Items shared" />
                 <CardTitle title="5" subtitle="Items borrowed" />
-                <CardHeader avatar="images/jsa-128.jpg"/>
+                <CardHeader avatar={<Gravatar email={singleUserData.email} className="gravatar-image"/>}/>
             </Card>
         </div>
         );
