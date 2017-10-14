@@ -4,7 +4,12 @@ class Share extends Component {
 
     render() {
         return (
-            <h1>This is the share page</h1>
+            <div className="share-page"> 
+                <div className="left-half">
+                </div>
+                <div className="right-half">
+                </div>
+            </div>
         );
     }
 }

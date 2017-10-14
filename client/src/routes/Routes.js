@@ -4,7 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 import Items from '../containers/Items/Items';
 import Login from '../containers/Login/Login';
 import Share from '../containers/Share/Share';
-import Profile from '../containers/Profile/Profile';
+import ProfileContainer from '../containers/ProfileContainer/ProfileContainer';
 import NotFound from '../containers/NotFound/NotFound'; 
  
  const Routes = () => (
@@ -12,7 +12,7 @@ import NotFound from '../containers/NotFound/NotFound';
          <Route exact path="/" component={Items} />
          <Route path="/login" component={Login} />
          <Route path="/share" component={Share} />
-         <Route path="/profile/:id" component={Profile} />
+         <Route path="/profile/:id" component={ProfileContainer} />
          <Route component={NotFound} />
      </Switch>
  );
