@@ -4,20 +4,27 @@ import Gravatar from 'react-gravatar';
 
 import './styles.css';
 
-
 const Profile = ({singleUserData}) => {
         console.log(singleUserData);
 
     return (
 
         <div className="profile-card">
-            
             <Card>
-                <CardTitle title={singleUserData.fullName} subtitle={singleUserData.bio} />
-                <CardTitle title="0" subtitle="Items shared" />
-                <CardTitle title="5" subtitle="Items borrowed" />
-                <CardHeader avatar={<Gravatar email={singleUserData.email} className="gravatar-image"/>}/>
+                <div className="card-structure">
+                    <div className="profile-name">
+                        <CardTitle title={singleUserData.fullName} subtitle={singleUserData.bio} />
+                    </div>
+                    <div className="profile-item-data">
+                        <CardTitle title="0" subtitle="Items shared" />
+                        <CardTitle title="5" subtitle="Items borrowed" />
+                    </div>
+                    <div className="profile-gravatar">
+                        <Gravatar size={150} email={singleUserData.email} className="gravatar-image"/>
+                    </div>
+                </div>
             </Card>
+
         </div>
         );
     }

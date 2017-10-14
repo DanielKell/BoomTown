@@ -17,9 +17,9 @@ class ProfileContainer extends Component {
 
     render() {
 
-        if (this.props.singleUserData.id == null) return <NotFound />
-
         if (this.props.loading) return <Loader />
+
+        if (this.props.singleUserData.id == null) return <NotFound />
 
         return (
             <Profile singleUserData = {this.props.singleUserData}/>

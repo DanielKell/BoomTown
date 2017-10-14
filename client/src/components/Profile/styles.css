@@ -4,3 +4,25 @@
     margin: 0 auto;
     margin-top: 30px;
 }
+
+.card-structure {
+    display: flex;
+    padding: 20px 40px;
+}
+
+.profile-name {
+
+}
+
+.profile-item-data {
+
+}
+
+.profile-gravatar {
+    display: flex;
+    align-items: center;
+}
+
+.gravatar-image {
+    border-radius: 80px;
+}
