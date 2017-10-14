@@ -4,13 +4,13 @@ import { connect } from 'react-redux';
 import './styles.css';
 import Profile from '../../components/Profile/Profile';
 import {Card, CardHeader, CardTitle} from 'material-ui/Card';
-import {fetchCardData} from '../../redux/modules/card_data';
+import {fetchCardAndUserData} from '../../redux/modules/card_data';
 
 
 class ProfileContainer extends Component {
 
     componentDidMount() {
-        this.props.dispatch(fetchCardData());
+        this.props.dispatch(fetchCardAndUserData());
     }
 
     render() {

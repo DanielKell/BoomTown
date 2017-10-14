@@ -1,19 +1,35 @@
 //This file contains the actions and reducers for pulling the card data
 
-const FETCH_DATA = "FETCH_DATA";
+const FETCH_CARDS_WITH_USERS = "FETCH_CARDS_WITH_USERS";
+const FETCH_CARDS = "FETCH_CARDS";
+const FETCH_USERS = "FETCH_USERS";
 
-//Action
+//Actions
 
-export function fetchingData(itemsWithUsers) {
+export function fetchData(itemsWithUsers) {
     return {
-        type: FETCH_DATA,
+        type: FETCH_CARDS_WITH_USERS,
         payload: itemsWithUsers
+    };
+}
+
+export function fetchCards(cards) {
+    return {
+        type: FETCH_CARDS,
+        payload: cards
+    };
+}
+
+export function fetchUsers(users) {
+    return {
+        type: FETCH_USERS,
+        payload: users
     };
 }
 
 //Helper
 
-export function fetchCardData() {
+export function fetchCardAndUserData() {
     return (dispatch) => {
         Promise.all(['http://localhost:3001/items', 'http://localhost:3001/users'].map(url => (
                 fetch(url).then(response => response.json()))))
@@ -33,7 +49,31 @@ export function fetchCardData() {
                         user: users.find(user => user.id === item.itemOwner)
                     }
                 })
-                dispatch(fetchingData(itemsWithUsers));
+                dispatch(fetchData(itemsWithUsers));
+            })
+    };
+}
+
+export function fetchCardData() {
+    return (dispatch) => {
+        fetch('http://localhost:3001/items').map(url => (
+                fetch(url).then(response => response.json())))
+            .then(json => {
+                const cards = json;
+
+                dispatch(fetchCards(cards));
+            })
+    };
+}
+
+export function fetchUserData() {
+    return (dispatch) => {
+        fetch('http://localhost:3001/users').map(url => (
+                fetch(url).then(response => response.json())))
+            .then(json => {
+                const users = json;
+
+                dispatch(fetchUsers(users));
             })
     };
 }
@@ -41,19 +81,36 @@ export function fetchCardData() {
 //Reducer
 
 const initialState = {
-    itemCardData: [],
-    loading: true
+    CardsWithUserData: [],
+    loading: true,
+    justCardData: [],
+    justUserData: []
 };
 
 export default function (state = initialState, action) {
     switch (action.type) {
-        case FETCH_DATA:
+        case FETCH_CARDS_WITH_USERS:
 
             const stateAndData = {
-                itemCardData: action.payload,
-                loading: false
+                ...state,
+                CardsWithUserData: action.payload,
+                loading: false,
             };
             return stateAndData;
+
+        case FETCH_CARDS:
+
+            return {
+                ...state,
+                justCardData: action.payload
+            };
+
+        case FETCH_USERS:
+
+            return {
+                ...state,
+                justUserData: action.payload
+            };
     }
     return state;
 }

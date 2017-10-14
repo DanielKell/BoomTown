@@ -7,22 +7,22 @@ import { connect } from 'react-redux';
 import ItemCardList from '../../components/ItemCardList/ItemCardList';
 import Loader from '../../components/Loader';
 import './styles.css';
-import {fetchCardData} from '../../redux/modules/card_data';
+import {fetchCardAndUserData} from '../../redux/modules/card_data';
 
 class Items extends Component {
 
     componentDidMount() {
 
-        this.props.dispatch(fetchCardData());
+        this.props.dispatch(fetchCardAndUserData());
 
         // fetch('http://localhost:3001/items')
         //     .then(response => response.json())
         //     .then(data => {
         //         this.setState({
-        //             itemCardData: data,
+        //             CardsWithUserData: data,
         //         });
         //     console.log(this.state);
-        //     console.log(this.state.itemCardData);
+        //     console.log(this.state.CardsWithUserData);
         // })
         
         // fetch('http://localhost:3001/users')
@@ -54,7 +54,7 @@ class Items extends Component {
         //     })
  
         //      this.setState({
-        //          itemCardData: itemsWithUsers,
+        //          CardsWithUserData: itemsWithUsers,
         //          loading: false
         //      });
              
@@ -69,7 +69,7 @@ render() {
 
     return ( 
         <div>
-        <ItemCardList itemCardData = {this.props.itemCardData} />
+        <ItemCardList CardsWithUserData = {this.props.CardsWithUserData} />
             <Link to="/share">
                 <FloatingActionButton className="share-button" backgroundColor="black">
                     <ContentAdd />
@@ -84,7 +84,7 @@ render() {
 //Note: Should try to refactor and separate item data and user data, and can them put them together in the below function
 const mapStateToProps = (state) => {
     return {
-        itemCardData: state.cardAndUserData.itemCardData,
+        CardsWithUserData: state.cardAndUserData.CardsWithUserData,
         loading: state.cardAndUserData.loading
     };
 }
