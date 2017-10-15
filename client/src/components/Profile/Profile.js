@@ -16,8 +16,8 @@ const Profile = ({singleUserData}) => {
                         <CardTitle title={singleUserData.fullName} subtitle={singleUserData.bio} />
                     </div>
                     <div className="profile-item-data">
-                        <CardTitle title="0" subtitle="Items shared" />
-                        <CardTitle title="5" subtitle="Items borrowed" />
+                        <CardTitle title="2" subtitle="Items shared" />
+                        <CardTitle title="4" subtitle="Items borrowed" />
                     </div>
                     <div className="profile-gravatar">
                         <Gravatar size={150} email={singleUserData.email} className="gravatar-image"/>
