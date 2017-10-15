@@ -16,7 +16,6 @@ import placeholder from '../../images/item-placeholder.jpg';
 class Share extends Component {
 
     //Copied code for the stepper 
-
     state = {
     finished: false,
     stepIndex: 0,

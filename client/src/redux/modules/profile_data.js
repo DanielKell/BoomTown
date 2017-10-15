@@ -1,3 +1,5 @@
+ //Actions
+ 
  const LOAD_SINGLE_USER = 'LOAD_SINGLE_USER';
 
  export function loadUsers(userData) {
@@ -7,6 +9,7 @@
      };
  }
 
+//Helper Functions
  export function fetchProfile(userId) {
      return function (dispatch) {
          fetch(`http://localhost:3001/users/${userId}`)
@@ -19,6 +22,8 @@
      };
  }
 
+
+//Reducers 
  const initialState = {
      loading: true,
      usersData: []

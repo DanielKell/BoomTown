@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 import ItemCard from '../ItemCard';
 import './styles.css';
 
-
 const ItemCardList = ({CardsWithUserData}) => {
 
     return (

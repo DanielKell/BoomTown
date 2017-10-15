@@ -12,7 +12,6 @@ import Login from './containers/Login';
 import Routes from './routes';
 import store from './redux/store'; //Redux
 
-
 const Boomtown = () => (
     <MuiThemeProvider muiTheme={muiTheme}>
         <Provider store={store}>
