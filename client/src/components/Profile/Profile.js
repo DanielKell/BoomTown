@@ -1,5 +1,5 @@
 import React from 'react';
-import {Card, CardHeader, CardTitle} from 'material-ui/Card';
+import {Card, CardTitle} from 'material-ui/Card';
 import PropTypes from 'prop-types';
 import Gravatar from 'react-gravatar';
 

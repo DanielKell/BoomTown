@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import {Card, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import {
   Step,
   Stepper,
@@ -129,7 +129,7 @@ render() {
                     {finished && (
                     <p style={{margin: '20px 0', textAlign: 'center'}}>
                         <a
-                        href="#"
+                        href=""
                         onClick={(event) => {
                             event.preventDefault();
                             this.setState({stepIndex: 0, finished: false});

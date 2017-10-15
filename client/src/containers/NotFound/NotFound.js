@@ -8,7 +8,7 @@ class NotFound extends Component {
     render() {
         return (
             <div className="not-found-container">
-                <img className="not-found-svg" src={ohDeer} />
+                <img className="not-found-svg" src={ohDeer} alt="You are lost"/>
                 <h2 className="not-found-text">Unfortunately you are lost! Please try somewhere else</h2>
             </div>
         );
