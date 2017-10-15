@@ -1,5 +1,6 @@
 import React from 'react';
 import {Card, CardHeader, CardTitle} from 'material-ui/Card';
+import PropTypes from 'prop-types';
 import Gravatar from 'react-gravatar';
 
 import './styles.css';
@@ -28,5 +29,14 @@ const Profile = ({singleUserData}) => {
         </div>
         );
     }
+
+Profile.propTypes = {
+    singleUserData: PropTypes.shape({
+        bio: PropTypes.string.isRequired,
+        email: PropTypes.string.isRequired,
+        fullname: PropTypes.string,
+        id: PropTypes.string.isRequired
+    })
+};
 
 export default Profile

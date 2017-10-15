@@ -1,11 +1,9 @@
 import React from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import PropTypes from 'prop-types';
-import Header from '../Header/Header';
-import Footer from '../Footer/Footer';
+import Header from '../Header';
+import Footer from '../Footer';
             
-
-
 import './styles.css';
 
 const Layout = ({ children }) => (
@@ -16,7 +14,7 @@ const Layout = ({ children }) => (
         <div className="appContent">
             {children}
         </div>
-            <Footer />
+        <Footer />
     </div>
 );
 

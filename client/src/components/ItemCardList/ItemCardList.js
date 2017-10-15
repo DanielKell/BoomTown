@@ -1,8 +1,10 @@
 import React from 'react';
 import Masonry from 'react-masonry-component';
+import PropTypes from 'prop-types';
 
-import ItemCard from '../ItemCard/ItemCard';
+import ItemCard from '../ItemCard';
 import './styles.css';
+
 
 const ItemCardList = ({CardsWithUserData}) => {
 
@@ -13,12 +15,16 @@ const ItemCardList = ({CardsWithUserData}) => {
         >
            { CardsWithUserData.map((item) => (
                 <ItemCard 
-                    CardAndUserData={item} 
+                    CardsWithUserData={item} 
                     key={item.id} 
                 />
               )) }
         </Masonry>
     );
 }
+
+ItemCardList.propTypes = {
+    CardsWithUserData: PropTypes.arrayOf(PropTypes.object).isRequired
+};
 
 export default ItemCardList;

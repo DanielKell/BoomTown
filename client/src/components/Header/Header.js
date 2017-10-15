@@ -2,7 +2,7 @@ import React from 'react';
 import AppBar from 'material-ui/AppBar';
 import { Link } from 'react-router-dom';
 
-import FilterField from '../FilterField/FilterField';
+import FilterField from '../FilterField';
 import RaisedButton from 'material-ui/RaisedButton';
 import './styles.css';
 import logo from '../../images/boomtown-logo.svg';

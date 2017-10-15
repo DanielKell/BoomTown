@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
  
-import Items from '../containers/Items/Items';
-import Login from '../containers/Login/Login';
-import Share from '../containers/Share/Share';
-import ProfileContainer from '../containers/ProfileContainer/ProfileContainer';
-import NotFound from '../containers/NotFound/NotFound'; 
+import Items from '../containers/Items';
+import Login from '../containers/Login';
+import Share from '../containers/Share';
+import ProfileContainer from '../containers/ProfileContainer';
+import NotFound from '../containers/NotFound'; 
  
  const Routes = () => (
      <Switch>

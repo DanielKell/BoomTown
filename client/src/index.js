@@ -9,7 +9,7 @@ import './index.css';
 import muiTheme from './config/theme';
 import Layout from './components/Layout';
 import Login from './containers/Login';
-import Routes from './routes/Routes';
+import Routes from './routes';
 import store from './redux/store'; //Redux
 
 

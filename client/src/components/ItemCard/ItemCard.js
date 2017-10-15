@@ -1,36 +1,38 @@
 import React from 'react';
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import RaisedButton from 'material-ui/RaisedButton';
-import './styles.css';
+import PropTypes from 'prop-types';
 import Gravatar from 'react-gravatar';
 
-const ItemCard = ({CardAndUserData}) => {
+import './styles.css';
 
-const moment = require('moment');
-moment().format();
+const ItemCard = ({CardsWithUserData}) => {
+
+    const moment = require('moment');
+    moment().format();
 
     return (
         <li className="one-item-card">
             <Card >
                 <CardMedia 
-                    overlay={!CardAndUserData.available && <CardTitle subtitle="UNAVAILABLE" />}
+                    overlay={!CardsWithUserData.available && <CardTitle subtitle="UNAVAILABLE" />}
                 >
-                <img src={CardAndUserData.imageUrl} alt="" />
+                <img src={CardsWithUserData.imageUrl} alt="" />
                 </CardMedia>  
                 <CardHeader
-                    title={CardAndUserData.user.fullName}
-                    subtitle={(moment(CardAndUserData.createdOn)).fromNow()}
-                    avatar={<Gravatar email={CardAndUserData.user.email} className="gravatar-image"/>}
+                    title={CardsWithUserData.user.fullName}
+                    subtitle={(moment(CardsWithUserData.createdOn)).fromNow()}
+                    avatar={<Gravatar email={CardsWithUserData.user.email} className="gravatar-image"/>}
                 />
                 <CardTitle 
-                    title={CardAndUserData.title} 
-                    subtitle={CardAndUserData.tags.join(', ')}
+                    title={CardsWithUserData.title} 
+                    subtitle={CardsWithUserData.tags.join(', ')}
                 />
                 <CardText>
-                    {CardAndUserData.description}
+                    {CardsWithUserData.description}
                 </CardText>  
                 <CardActions>
-                    {CardAndUserData.available
+                    {CardsWithUserData.available
                     ? <RaisedButton label="Borrow" primary={true} backgroundColor="black" labelColor="white"/>
                     :false}
                 </CardActions>
@@ -38,5 +40,24 @@ moment().format();
         </li>
     );
 }
+
+ItemCard.propTypes = {
+    CardsWithUserData: PropTypes.shape({
+        available: PropTypes.bool.isRequired,
+        borrower: PropTypes.string,
+        createdOn: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+        id: PropTypes.number.isRequired,
+        imageUrl: PropTypes.string.isRequired,
+        user: PropTypes.shape({
+            bio: PropTypes.string.isRequired,
+            email: PropTypes.string.isRequired,
+            fullname: PropTypes.string,
+            id: PropTypes.string.isRequired
+        }),
+        tags: PropTypes.array.isRequired,
+        title: PropTypes.string.isRequired
+    })
+};
 
 export default ItemCard;

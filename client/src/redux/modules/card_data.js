@@ -51,6 +51,7 @@ export function fetchCardAndUserData() {
                 })
                 dispatch(fetchData(itemsWithUsers));
             })
+            .catch(error => console.log(error));
     };
 }
 
@@ -113,6 +114,6 @@ export default function (state = initialState, action) {
             };
 
         default:
-         return state;
+            return state;
     }
 }
