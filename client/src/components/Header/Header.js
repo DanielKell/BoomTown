@@ -9,7 +9,10 @@ import logo from '../../images/boomtown-logo.svg';
 
 const Header = () => {
 
+    let location = window.location.href;
+    
     return (
+        
         <AppBar className= "app-bar" title="" style={{'background-color': 'white'}} iconElementLeft = { 
             <div className="logo-and-filter">
                 <div>
@@ -18,10 +21,12 @@ const Header = () => {
                     </Link>
                 </div>
 
-                <div className="filter-field">
-                    <FilterField 
-                    />
-                </div>
+                {location === "http://localhost:3000/" ?
+                 <div className="filter-field">
+                    <FilterField />
+                  </div>
+                : false
+                }
             </div>
             } 
             

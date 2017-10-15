@@ -12,6 +12,7 @@ class ProfileContainer extends Component {
 
     componentDidMount() {
         this.props.dispatch(fetchProfile(this.props.match.params.id));
+        console.log(this.props.match.params.id);
     }
 
     render() {
