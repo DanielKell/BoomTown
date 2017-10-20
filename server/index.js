@@ -4,9 +4,12 @@ import {
   graphqlExpress, 
   graphiqlExpress 
 } from 'apollo-server-express';
-import schema from './api/schema'; // Next step!
+import schema from './api/schema'; 
+import cors from 'cors';
 
 const app = express();
+
+app.use('*', cors());
 
 const GQL_PORT = 5000;
 

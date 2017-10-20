@@ -17,8 +17,8 @@ class ProfileContainer extends Component {
 
     render() {
 
-        if (this.props.loading) return <Loader />
-
+        if (this.props.loading) return <Loader /> //Will need to refactor this for graphql
+        //Refer to slide 55. Need to copy the structure, and use match.params.id
         if (this.props.singleUserData.id == null) return <NotFound />
 
         return (

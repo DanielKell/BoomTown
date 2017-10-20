@@ -2,6 +2,8 @@ import { makeExecutableSchema } from 'graphql-tools';
 
 import resolvers from './resolvers'; //Functions that tell us where to get the data
 
+
+
 const typeDefs = `
     type Item {
         id: ID!
@@ -27,6 +29,15 @@ const typeDefs = `
         item(id: ID!): Item
         users: [User]
         user(id: ID!): User 
+    }
+      type Mutation { 
+        addItem (
+            title: String!
+            imageUrl: String
+            itemOwner: ID!
+            description: String
+            tags: [String]
+        ): Item
     }
 `;
 

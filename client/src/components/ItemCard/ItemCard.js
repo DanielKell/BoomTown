@@ -20,9 +20,9 @@ const ItemCard = ({CardsWithUserData}) => {
                 <img src={CardsWithUserData.imageUrl} alt="" />
                 </CardMedia>  
                 <CardHeader
-                    title={CardsWithUserData.user.fullName}
+                    title={CardsWithUserData.itemOwner.fullName}
                     subtitle={(moment(CardsWithUserData.createdOn)).fromNow()}
-                    avatar={<Gravatar email={CardsWithUserData.user.email} className="gravatar-image"/>}
+                    avatar={<Gravatar email={CardsWithUserData.itemOwner.email} className="gravatar-image"/>}
                 />
                 <CardTitle 
                     title={CardsWithUserData.title} 

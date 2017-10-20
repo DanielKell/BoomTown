@@ -274,6 +274,149 @@
       "createdOn": "2017-08-08",
       "available": true,
       "borrower": null
+    },
+    {
+      "title": "I'm dope",
+      "imageUrl": "hi",
+      "itemOwner": "LAi9TYWxgGhbjgHu1Sm6ZvB1tRP2",
+      "description": "Hi",
+      "tags": [
+        "1"
+      ],
+      "createdOn": "2017-10-20 11:50:22.832-07",
+      "available": true,
+      "borrower": null,
+      "id": 22
+    },
+    {
+      "title": "I'm dope",
+      "imageUrl": "hi",
+      "itemOwner": "LAi9TYWxgGhbjgHu1Sm6ZvB1tRP2",
+      "description": "Hi",
+      "tags": [
+        "1"
+      ],
+      "createdOn": "2017-10-20 11:53:05.996-07",
+      "available": true,
+      "borrower": null,
+      "id": 23
+    },
+    {
+      "title": "I'm dope",
+      "imageUrl": "hi",
+      "itemOwner": "LAi9TYWxgGhbjgHu1Sm6ZvB1tRP2",
+      "description": "Hi",
+      "tags": [
+        "1"
+      ],
+      "createdOn": "2017-10-20 11:53:30.956-07",
+      "available": true,
+      "borrower": null,
+      "id": 24
+    },
+    {
+      "title": "I'm dope",
+      "imageUrl": "hi",
+      "itemOwner": "LAi9TYWxgGhbjgHu1Sm6ZvB1tRP2",
+      "description": "Hi",
+      "tags": [
+        "1"
+      ],
+      "createdOn": "2017-10-20 11:54:48.507-07",
+      "available": true,
+      "borrower": null,
+      "id": 25
+    },
+    {
+      "title": "I'm dope",
+      "imageUrl": "hi",
+      "itemOwner": "LAi9TYWxgGhbjgHu1Sm6ZvB1tRP2",
+      "description": "Hi",
+      "tags": [
+        "1"
+      ],
+      "createdOn": "2017-10-20 11:55:33.385-07",
+      "available": true,
+      "borrower": null,
+      "id": 26
+    },
+    {
+      "title": "I'm dope",
+      "imageUrl": "hi",
+      "itemOwner": "LAi9TYWxgGhbjgHu1Sm6ZvB1tRP2",
+      "description": "Hi",
+      "tags": [
+        "1"
+      ],
+      "createdOn": "2017-10-20 11:56:38.056-07",
+      "available": true,
+      "borrower": null,
+      "id": 27
+    },
+    {
+      "title": "I'm dope",
+      "imageUrl": "hi",
+      "itemOwner": "LAi9TYWxgGhbjgHu1Sm6ZvB1tRP2",
+      "description": "Hi",
+      "tags": [
+        "1"
+      ],
+      "createdOn": "2017-10-20 13:12:11.454-07",
+      "available": true,
+      "borrower": null,
+      "id": 28
+    },
+    {
+      "title": "I'm dope",
+      "imageUrl": "hi",
+      "itemOwner": "LAi9TYWxgGhbjgHu1Sm6ZvB1tRP2",
+      "description": "Hi",
+      "tags": [
+        "1"
+      ],
+      "createdOn": "2017-10-20 13:44:01.825-07",
+      "available": true,
+      "borrower": null,
+      "id": 29
+    },
+    {
+      "title": "I'm dope",
+      "imageUrl": "hi",
+      "itemOwner": "LAi9TYWxgGhbjgHu1Sm6ZvB1tRP2",
+      "description": "Hi",
+      "tags": [
+        "1"
+      ],
+      "createdOn": "2017-10-20 13:53:45.563-07",
+      "available": true,
+      "borrower": null,
+      "id": 30
+    },
+    {
+      "title": "I'm dope",
+      "imageUrl": "hi",
+      "itemOwner": "LAi9TYWxgGhbjgHu1Sm6ZvB1tRP2",
+      "description": "Hi",
+      "tags": [
+        "1"
+      ],
+      "createdOn": "2017-10-20 14:06:06.734-07",
+      "available": true,
+      "borrower": null,
+      "id": 31
+    },
+    {
+      "title": "I'm dope",
+      "imageUrl": "hi",
+      "itemOwner": "LAi9TYWxgGhbjgHu1Sm6ZvB1tRP2",
+      "description": "Hi",
+      "tags": [
+        "1"
+      ],
+      "createdOn": "2017-10-20 14:06:32.732-07",
+      "available": true,
+      "borrower": null,
+      "id": 32
     }
   ],
   "users": [

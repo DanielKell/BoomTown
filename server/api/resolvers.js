@@ -1,71 +1,94 @@
 import fetch from 'node-fetch';
+import {getItems, getItem, getUsers, getUser, getUserItems, getUserBorrowedItems, addItemNow} from './jsonHelpers';
 
 const resolveFunctions = {
     Query: {
         items() {
-            return fetch(`http://localhost:3001/items`)
-            .then(response => response.json())
-            .catch(errors => console.log(errors));
+        return getItems();
         },
         item(root, { id }) {
-         return fetch(`http://localhost:3001/items/${id}`)
-         .then(response => response.json())
-         .catch(errors => console.log(errors));
+        return getItem(id);
         },
         users() {
-            return fetch(`http://localhost:3001/users`)
-            .then(response => response.json())
-            .catch(errors => console.log(errors));
+        return getUsers();
         },
         user(root, { id }) {
-         return fetch(`http://localhost:3001/users/${id}`)
-         .then(response => response.json())
-         .catch(errors => console.log(errors));
+        return getUser(id);
         }
     },
     Item: {
         itemOwner(items) {
-            return fetch(`http://localhost:3001/users/${items.itemOwner}`)
-            .then(response => response.json())
-            .catch(errors => console.log(errors));
+            return getUser(items.itemOwner);
         },
         borrower(items) {
-            return fetch(`http://localhost:3001/users/${items.borrower}`)
-            .then(response => response.json())
-            .catch(errors => console.log(errors));
+            return getUser(items.borrower);
         }
     },
     User: {
-        items(users) {
-            return fetch(`http://localhost:3001/items/?itemOwner=${users.id}`)
-            .then(response => response.json())
-            .catch(errors => console.log(errors));
+        items(user) {
+            return getUserItems(user.id);
         },
-        borrowedItems(users) {
-            return fetch(`http://localhost:3001/items/?borrower=${users.id}`)
-            .then(response => response.json())
-            .catch(errors => console.log(errors));
+        borrowedItems(user) {
+            return getUserBorrowedItems(user.id);
         }
-    }
+    },
+    Mutation: {
+        addItem(root, {title, imageUrl, description, itemOwner, tags}) {
+            return addItemNow(title, imageUrl, description, itemOwner, tags);
+      }
+  }
 }
 
 export default resolveFunctions;
 
-// const resolveFunctions = {
-//   Query: {
-//     movies() {
-//       return fetch(`http://somemovieapi.com/movies/`)
-//         .then(response => response.json())
-//         .catch(errors => console.log(errors));
-//     },
-//     movie(root, { id }) {
-//       return fetch(`http://somemovieapi.com/movies/${id}`)
-//         .then(response => response.json())
-//         .catch(errors => console.log(errors));
-//     }
-//   },
-//   // ...other resolvers
-// };
+// To use query variables in graphiql, use something like:
 
-//USE THIS when linking item users to owners(?)
-//Item Items User Users + Specific fields you need. Itemowner, borrower. Items and borrower for user type.
+//  query getItem($id: ID!){
+//   item(id: $id) {
+// 		title
+//   } 
+// }
+
+// and in the variables section
+
+// {
+//   "id": 2
+// }
+
+// mutation addItem(
+//   $title: String!
+//   $imageUrl: String
+//   $itemOwner:ID!
+//   $description: String
+//   $tags: [String]
+// ) {
+//   addItem(
+//     itemOwner:$itemOwner
+// 		title: $title
+//     description:$description
+//     tags: $tags
+//     imageUrl: $imageUrl
+
+//   ) {
+//     title
+//     description
+//     imageUrl
+//     tags
+//     itemOwner {
+//       fullName
+//     }
+//     borrower {
+//       fullName
+//     } 
+//   }
+// }
+
+// {
+//   "itemOwner": "LAi9TYWxgGhbjgHu1Sm6ZvB1tRP2",
+//   "title": "I'm dope",
+//   "description": "Hi",
+//   "imageUrl": "hi",
+//   "tags": [
+//     "1"
+//   ]
+// }

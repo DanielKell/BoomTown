@@ -4,8 +4,10 @@ import {
 
 import fetchDataReducer from './modules/card_data';
 import fetchSingleUserData from './modules/profile_data';
+import client from '../config/apolloClient';
 
 export default combineReducers({
+    apollo: client.reducer(),
     cardAndUserData: fetchDataReducer,
     singleUserData: fetchSingleUserData
 });

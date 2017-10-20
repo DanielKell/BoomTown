@@ -6,6 +6,7 @@ import ItemCard from '../ItemCard';
 import './styles.css';
 
 const ItemCardList = ({CardsWithUserData}) => {
+    // console.log(CardsWithUserData)
 
     return (
         <Masonry
