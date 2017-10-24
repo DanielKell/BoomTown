@@ -6,32 +6,49 @@ const resolveFunctions = {
         items() {
         return getItems();
         },
-        item(root, { id }) {
-        return getItem(id);
+        item(root, { id }, context) {
+        // return getItem(id);
+        return context.loaders.getItem.load(id)
         },
         users() {
         return getUsers();
         },
-        user(root, { id }) {
-        return getUser(id);
+        user(root, { id }, context) {
+        // return getUser(id);
+        return context.loaders.getUser.load(id)
         }
     },
+    // Item: {
+    //     itemOwner(items) {
+    //         return getUser(items.itemOwner);
+    //     },
+    //     borrower(items) {
+    //         return getUser(items.borrower);
+    //     }
+    // },
     Item: {
-        itemOwner(items) {
-            return getUser(items.itemOwner);
-        },
-        borrower(items) {
-            return getUser(items.borrower);
-        }
+    itemOwner(items, args, context){
+      if (!items.itemOwner) return null
+      return context.loaders.User.load(items.itemOwner)
+      // return getUser(item.itemowner)
     },
+    borrower(items, args, context){
+      if (!items.borrower) return null
+      // return getUser(item.borrower)
+      return context.loaders.User.load(items.borrower)
+    }
+  },
     User: {
-        items(user) {
-            return getUserItems(user.id);
+        items(user, args, context) {
+            // return getUserItems(user.id);
+            return context.loaders.UserOwnedItems.load(user.id)
         },
-        borrowedItems(user) {
-            return getUserBorrowedItems(user.id);
+        borrowedItems(user, args, context) {
+            // return getUserBorrowedItems(user.id);
+            return context.loaders.UserBorrowedItems.load(user.id)
         }
     },
+    
     Mutation: {
         addItem(root, {title, imageUrl, description, itemOwner, tags}) {
             return addItemNow(title, imageUrl, description, itemOwner, tags);

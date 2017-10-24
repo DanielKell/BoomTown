@@ -6,6 +6,7 @@ import {
 } from 'apollo-server-express';
 import schema from './api/schema'; 
 import cors from 'cors';
+import createLoaders from './api/loaders';
 
 const app = express();
 
@@ -14,7 +15,8 @@ app.use('*', cors());
 const GQL_PORT = 5000;
 
 app.use('/graphql', bodyParser.json(), graphqlExpress({
-    schema: schema
+    schema: schema,
+    context: { loaders: createLoaders() }
 }));
 
 app.use('/graphiql', graphiqlExpress({
