@@ -10,11 +10,15 @@ const typeDefs = `
         title: String!
         description: String
         imageUrl: String
-        tags: [String]
+        tags: [Tag]
         itemOwner: User!
         createdOn: String!
 
         borrower: User
+    }
+    type Tag {
+        tagid: ID!
+        title: String!
     }
     type User {
         id: ID!

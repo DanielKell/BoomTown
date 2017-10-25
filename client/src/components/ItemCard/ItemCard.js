@@ -10,7 +10,7 @@ const ItemCard = ({CardsWithUserData}) => {
 
     const moment = require('moment');
     moment().format();
-
+                    // subtitle={CardsWithUserData.tags.join(', ')}
     return (
         <li className="one-item-card">
             <Card >
@@ -26,7 +26,7 @@ const ItemCard = ({CardsWithUserData}) => {
                 />
                 <CardTitle 
                     title={CardsWithUserData.title} 
-                    subtitle={CardsWithUserData.tags.join(', ')}
+
                 />
                 <CardText>
                     {CardsWithUserData.description}

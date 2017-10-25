@@ -8,10 +8,38 @@ import {
 } from 'material-ui/Stepper';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
+import { TextField } from 'material-ui';
 import Gravatar from 'react-gravatar';
+import { reduxForm, Field, formValueSelector } from 'redux-form';
+import { connect } from 'react-redux';
 
+import {textItemTitle, textItemDescription} from './formInputs';
 import './styles.css';
 import placeholder from '../../images/item-placeholder.jpg';
+
+//Setting up all the validation for the form
+
+    const validate = values => {
+        const errors = {};
+
+        if (!values.itemTitle) {
+            errors.itemTitle = "Please add a title";
+        }
+        if (values.itemTitle && values.itemTitle.length > 10) {
+            errors.itemTitle = "Your title is too long.";
+        }
+
+        if (!values.itemDescription) {
+            errors.itemDescription = "Please add a description";
+        }
+
+       if (values.itemDescription && values.itemDescription.length > 10) {
+            errors.itemDescription = "Please add a description";
+        }
+        return errors;
+    }
+
+//The Share Component
 
 class Share extends Component {
 
@@ -65,7 +93,7 @@ class Share extends Component {
 render() {
 
     const {finished, stepIndex} = this.state;
-
+    console.log(this.props);
     return (
         <div className="share-page"> 
             <div className="left-half">
@@ -79,11 +107,10 @@ render() {
                             avatar={<Gravatar email="" className="gravatar-image"/>}
                         />
                         <CardTitle 
-                            title="Amazing Item Title"
-                            subtitle=""
+                            title={this.props.newItem.itemTitle}
+                            subtitle={this.props.newItem.itemDescription}
                         />
                         <CardText>
-                            Profound Item Description
                         </CardText>  
                     </Card>
                 </div>
@@ -96,14 +123,24 @@ render() {
                         <StepContent>
                         <p>
                             We live in a visual culture. Upload an image of the item you're sharing.
-                        </p>
-                        {this.renderStepActions(0)}
+                        </p> 
+                        {this.renderStepActions(0)} 
                         </StepContent>
                     </Step>
                     <Step>
                         <StepLabel>Add Title and Description</StepLabel>
                         <StepContent>
                         <p>Folks need to know what you're sharing. Give them a clue by adding a title & description.</p>
+                        <Field
+                            name="itemTitle"
+                            type="text"
+                            component={textItemTitle}
+                        />
+                        <Field
+                            name="itemDescription"
+                            type="text"
+                            component={textItemDescription}
+                        />
                         {this.renderStepActions(1)}
                         </StepContent>
                     </Step>
@@ -146,4 +183,18 @@ render() {
     }
 }
 
-export default Share;
+// export default Share;
+
+const newItemForm =  reduxForm({
+    validate,
+  form: 'share'
+})(Share);
+
+function mapStateToProps(state) {
+    const values = formValueSelector('share');
+    return {
+        newItem: values(state, "itemTitle", "itemDescription") //Include all the 'name's from above fields
+    };
+}
+
+export default connect (mapStateToProps)(newItemForm);

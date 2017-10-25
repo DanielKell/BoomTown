@@ -2,6 +2,8 @@ import fetch from 'node-fetch';
 import {getItem, getUsers, getUser, getUserItems, getUserBorrowedItems, addItemNow} from './jsonHelpers';
 import {database} from '../index.js';
 const resolveFunctions = {
+
+    //NEED TO ADD IN A RESOLVER FOR THE TAGS!!
     Query: {
         items() {
         return database.getItems();
@@ -16,7 +18,7 @@ const resolveFunctions = {
         user(root, { id }, context) {
         // return getUser(id);
         return context.loaders.getUser.load(id)
-        }
+        },
     },
     // Item: {
     //     itemOwner(items) {
