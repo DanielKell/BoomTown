@@ -2,7 +2,7 @@ import { makeExecutableSchema } from 'graphql-tools';
 
 import resolvers from './resolvers'; //Functions that tell us where to get the data
 
-
+//         available: Boolean!
 
 const typeDefs = `
     type Item {
@@ -13,7 +13,7 @@ const typeDefs = `
         tags: [String]
         itemOwner: User!
         createdOn: String!
-        available: Boolean!
+
         borrower: User
     }
     type User {
