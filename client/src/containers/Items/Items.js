@@ -68,6 +68,10 @@ const fetchItems = gql`
                  title
              }
              description
+             borrower {
+                 id 
+                 fullName
+             }
          }
      }
 `;

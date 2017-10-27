@@ -11,12 +11,15 @@ const ItemCard = ({CardsWithUserData}) => {
     moment().format();
 
    const itemTags = CardsWithUserData.tags.map(a => a.title);
+   console.log(CardsWithUserData);
+
+   //ADD LOGIC TO ONLY SHOW UNAVAILABLE AT THE RIGHT TIME. RECENTLY ADDED BORROWER DATA
 
     return (
         <li className="one-item-card">
             <Card >
                 <CardMedia 
-                    overlay={!CardsWithUserData.available && <CardTitle subtitle="UNAVAILABLE" />}
+                    overlay={!CardsWithUserData.borrower && <CardTitle subtitle="UNAVAILABLE" />}
                 >
                 <img src={CardsWithUserData.imageUrl} alt="" />
                 </CardMedia>  
@@ -33,7 +36,7 @@ const ItemCard = ({CardsWithUserData}) => {
                     {CardsWithUserData.description}
                 </CardText>  
                 <CardActions>
-                    {CardsWithUserData.available
+                    {CardsWithUserData.borrower
                     ? <RaisedButton label="Borrow" primary={true} backgroundColor="black" labelColor="white"/>
                     :false}
                 </CardActions>
