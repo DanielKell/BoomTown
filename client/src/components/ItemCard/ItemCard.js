@@ -10,10 +10,7 @@ const ItemCard = ({CardsWithUserData}) => {
     const moment = require('moment');
     moment().format();
 
-   const itemTags = CardsWithUserData.tags.map(a => a.title);
-   console.log(CardsWithUserData);
-
-   //ADD LOGIC TO ONLY SHOW UNAVAILABLE AT THE RIGHT TIME. RECENTLY ADDED BORROWER DATA
+    const itemTags = CardsWithUserData.tags.map(a => a.title);
 
     return (
         <li className="one-item-card">
