@@ -12,7 +12,7 @@ import logo from '../../images/boomtown-logo.svg';
 import bottomLeft from '../../images/home-bl.svg';
 import topRight from '../../images/home-tr.svg';
 
-const Login = ({ login }) => (
+const Login = ({ handleSubmit }) => (
     <div className="page login">
         <div className="logo">
             <img src={logo} alt="Boomtown Logo" />
@@ -26,7 +26,7 @@ const Login = ({ login }) => (
         <div className="cardContainer">
             <Paper zDepth={5}>
                 <div className="formContainer">
-                    <form onSubmit={login} autoComplete="off">
+                    <form autoComplete="off">
                         <div>
                             <ValidatedTextField label="Email" />
                         </div>
@@ -35,7 +35,7 @@ const Login = ({ login }) => (
                         </div>
 
                         <Link to="/">
-                            <RaisedButton className="enterButton" primary fullWidth type="submit">
+                            <RaisedButton onClick={handleSubmit} className="enterButton" primary fullWidth type="submit">
                                 Enter
                             </RaisedButton>
                         </Link>
@@ -47,7 +47,7 @@ const Login = ({ login }) => (
 );
 
 Login.propTypes = {
-    login: PropTypes.func.isRequired
+    handleSubmit: PropTypes.func.isRequired
 };
 
 export default Login;
