@@ -8,5 +8,6 @@ import client from '../config/apolloClient';
 
 export default createStore(
     rootReducer,
-    composeWithDevTools(applyMiddleware(thunk, createLogger(), client.middleware())) //Remove logger at release
+    composeWithDevTools(applyMiddleware(thunk, client.middleware())) //Remove logger at release
 );
+// createLogger(),

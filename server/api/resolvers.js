@@ -1,10 +1,8 @@
 import fetch from 'node-fetch';
 import {getItem, getUsers, getUser, getUserItems, getUserBorrowedItems, addItemNow} from './jsonHelpers';
 import {database} from '../index.js';
-// import {getTags} from './pg-resource';
 const resolveFunctions = {
 
-    //NEED TO ADD IN A RESOLVER FOR THE TAGS!!
     Query: {
         items() {
         return database.getItems();

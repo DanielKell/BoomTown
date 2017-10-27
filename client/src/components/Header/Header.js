@@ -1,6 +1,7 @@
 import React from 'react';
 import AppBar from 'material-ui/AppBar';
 import { Link } from 'react-router-dom';
+import * as firebase from 'firebase';
 
 import FilterField from '../FilterField';
 import RaisedButton from 'material-ui/RaisedButton';
@@ -38,13 +39,14 @@ const Header = () => {
                         primary={true}
                     /> 
                 </Link>
-                <Link to="/login">
+                {/*<Link to="/login">*/}
                     <RaisedButton 
                         label="Logout" 
                         labelColor="white"
                         backgroundColor="black" 
+                        onClick={() => firebase.auth().signOut()}
                     />
-                </Link>
+                {/*</Link>*/}
             </div>
             }>
 

@@ -1,5 +1,6 @@
 import DataLoader from 'dataloader';
-import { getUserOwnedItems, getUser, getItem, getUserBorrowedItems } from './jsonHelpers';
+import { getUserOwnedItems, getItem, getUserBorrowedItems} from './jsonHelpers';
+import { getUser } from './firebaseHelpers'; //switched getUser from above to here
 export default function() {
   return {
     UserOwnedItems: new DataLoader(ids => (
@@ -18,6 +19,5 @@ export default function() {
 };
 
 //This intercepts our queries, and if we are requesting data from multiple endpoints, it sends those requests a minimum number of times
-
 
 //Fetching a single item. Fetching a single user. User's borrowed items.
