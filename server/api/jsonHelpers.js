@@ -7,10 +7,7 @@ export const getItems = function getItems() {
             // .catch(errors => console.log(errors));
 
             return pgClient.query('SELECT * FROM items').then(res => res.rows);
-            // .then(response => response.json())
-            // .catch(errors => console.log(errors));
 }
-
 
 export const getItem = function getItem(id) {
             return fetch(`http://localhost:3001/items/${id}`)
@@ -28,6 +25,10 @@ export const getUser = function getUser(id) {
          return fetch(`http://localhost:3001/users/${id}`)
          .then(response => response.json())
          .catch(errors => console.log(errors));
+}
+
+export function getTags() {
+        return pgClient.query(`SELECT * FROM tags`).then(res => res.rows); 
 }
 
 // export const getItemOwner = function getItemOwner(items) {

@@ -20,7 +20,7 @@ class Items extends Component {
         
     render() {
         if (this.props.data.loading) return <Loader />
-        console.log(this.props.data)
+        console.log(this.props)
 
         return ( 
             <div>
@@ -64,7 +64,9 @@ const fetchItems = gql`
              }
              createdOn
              title
-             tags
+             tags {
+                 title
+             }
              description
          }
      }

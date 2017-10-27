@@ -9,10 +9,11 @@ export const textItemTitle = field => (
     {...field.input}
     />
 );
-                        <TextField 
-                            label="Title for Post"
-                            hintText="Title"
-                        />
+
+    /*<TextField 
+        label="Title for Post"
+        hintText="Title"
+    />*/
 
 export const textItemDescription = field => (
     <TextField

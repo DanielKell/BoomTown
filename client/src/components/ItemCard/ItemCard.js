@@ -7,10 +7,11 @@ import Gravatar from 'react-gravatar';
 import './styles.css';
 
 const ItemCard = ({CardsWithUserData}) => {
-
     const moment = require('moment');
     moment().format();
-                    // subtitle={CardsWithUserData.tags.join(', ')}
+
+   const itemTags = CardsWithUserData.tags.map(a => a.title);
+
     return (
         <li className="one-item-card">
             <Card >
@@ -26,7 +27,7 @@ const ItemCard = ({CardsWithUserData}) => {
                 />
                 <CardTitle 
                     title={CardsWithUserData.title} 
-
+                    subtitle={itemTags.join(', ')}
                 />
                 <CardText>
                     {CardsWithUserData.description}

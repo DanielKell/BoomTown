@@ -1,6 +1,7 @@
 import fetch from 'node-fetch';
 import {getItem, getUsers, getUser, getUserItems, getUserBorrowedItems, addItemNow} from './jsonHelpers';
 import {database} from '../index.js';
+// import {getTags} from './pg-resource';
 const resolveFunctions = {
 
     //NEED TO ADD IN A RESOLVER FOR THE TAGS!!
@@ -19,15 +20,11 @@ const resolveFunctions = {
         // return getUser(id);
         return context.loaders.getUser.load(id)
         },
+        tags() {
+        return database.getTags();
+        }
     },
-    // Item: {
-    //     itemOwner(items) {
-    //         return getUser(items.itemOwner);
-    //     },
-    //     borrower(items) {
-    //         return getUser(items.borrower);
-    //     }
-    // },
+
     Item: {
     itemOwner(items, args, context){
       if (!items.itemOwner) return null
@@ -38,6 +35,9 @@ const resolveFunctions = {
       if (!items.borrower) return null
       // return getUser(item.borrower)
       return context.loaders.User.load(items.borrower)
+    },
+    tags(item, args){
+      return database.getTag(item.id);
     }
   },
     User: {

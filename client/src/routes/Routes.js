@@ -16,5 +16,24 @@ import NotFound from '../containers/NotFound';
          <Route component={NotFound} />
      </Switch>
  );
+
+ /*const PrivateRoute = ({ component: Component, ...rest }) => (
+  <Route {...rest} render={props => (
+    fakeAuth.isAuthenticated ? (
+      <Component {...props}/>
+    ) : (
+      <Redirect to={{
+        pathname: '/login',
+        state: { from: props.location }
+      }}/>
+    )
+  )}/>
+)*/
+// NEED TO connect this to the redux store - replace fakeAuth.isAuthenticated
+//Use mapStateToProps and pass in user credentials 
+// Replace any route you want to be private with this route, as such: 
+// <PrivateRoute path="/protected" component={Protected}/>
+
+//Essentially make all above routes PrivateRoute except 404 and home, and import privateRoute component
  
  export default Routes;
