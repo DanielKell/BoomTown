@@ -13,13 +13,25 @@ import './styles.css';
 
 class Items extends Component {
         
+    filterItemsAndTags() {
+        const items = this.props.data.items;
+        const tags = this.props.tags;
+
+        if(tags.length) {
+            return items.filter(item => item.tags.map(tag => tag.title).find(kat => tags.includes(kat)));
+        }  
+        return items;
+    }
+
     render() {
+
+        const { tags } = this.props;
+        const filteredItems = this.filterItemsAndTags()
         if (this.props.data.loading) return <Loader />
-        console.log(this.props)
 
         return ( 
             <div>
-                <ItemCardList CardsWithUserData = {this.props.data.items} />
+                <ItemCardList CardsWithUserData={filteredItems} />
                 <Link to="/share">
                     <FloatingActionButton className="share-button" backgroundColor="black">
                         <ContentAdd />
@@ -75,5 +87,6 @@ const mapStateToProps = state => ({
     tags: state.tags.tagData
 });
 
+const ItemsWithData = connect(mapStateToProps)(Items);
 
-export default graphql(fetchItems)(Items);
+export default graphql(fetchItems)(ItemsWithData);
