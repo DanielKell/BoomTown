@@ -6,13 +6,14 @@ import { connect } from 'react-redux';
 class LoginContainer extends Component {
 
 //Firebase - DEAL WITH THIS. Need to connect to the button in 'Login' to fire this request. Also need to hook up redux forms.
-handleSubmit = async () => {
+handleSubmit = async (e) => {
 
+        console.log(this.props);
         //FIREBASE SETUP
-        console.log('FIREBASE ATTEMPT')
-        // const {email, password} = this.props.user;
+        const {email, password} = this.props.values.LoginForm.values;
+        //THIS WORKS, but you MUST enter stuff into the email/password boxes. Need to put validation checks! And maybe preventDefault
         try {
-        await firebase.auth().signInWithEmailAndPassword('mandi@email.com', 'redredred');
+        await firebase.auth().signInWithEmailAndPassword(email, password);
         // await firebase.auth().signInWithEmailAndPassword(email, password);
         }
         catch(error) {
@@ -29,12 +30,20 @@ handleSubmit = async () => {
 
     render() {
         return (
-            <Login handleSubmit={this.handleSubmit} />
+            <Login handleSubmit={this.handleSubmit} email={this.email} password={this.password}/>
         );
     }
 }
 
-export default LoginContainer;
+// export default LoginContainer;
+
+const mapStateToProps = state => ({
+    values: state.form,
+    auth: state.auth
+});
+
+export default connect(mapStateToProps)(LoginContainer);
+
 
 
 //This is used to submit dummy data to the server

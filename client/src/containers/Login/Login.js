@@ -15,27 +15,18 @@ import bottomLeft from '../../images/home-bl.svg';
 import topRight from '../../images/home-tr.svg';
 import {usernameInput, passwordInput} from './loginInput';
 
-    const validate = values => {
-        const errors = {};
-
-        if (!values.email) {
-            errors.email = "Please add a title";
+const validate = values => {
+    const errors = {};
+    const requiredFields = ['email', 'password'];
+    requiredFields.forEach(field => {
+        if (!values[field]) {
+            errors[field] = 'This field is Required';
         }
-        // if (values.email && values.email.length > 10) {
-        //     errors.email = "Your title is too long.";
-        // }
+    });
+    return errors; //Why doesn't this work??
+}
 
-        if (!values.password) {
-            errors.password = "Please add a description";
-        }
-
-    //    if (values.password && values.password.length > 10) {
-    //         errors.password = "Please add a description";
-    //     }
-        return errors;
-    }
-
-const Login = ({ handleSubmit }) => (
+const Login = ({ handleSubmit, email, password }) => (
     <div className="page login">
         <div className="logo">
             <img src={logo} alt="Boomtown Logo" />

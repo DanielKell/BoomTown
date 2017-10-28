@@ -10,13 +10,8 @@ import gql from 'graphql-tag';
 import ItemCardList from '../../components/ItemCardList';
 import Loader from '../../components/Loader';
 import './styles.css';
-// import {fetchCardAndUserData} from '../../redux/modules/card_data';
 
 class Items extends Component {
-
-    // componentDidMount() {
-    //     this.props.dispatch(fetchCardAndUserData());
-    // }
         
     render() {
         if (this.props.data.loading) return <Loader />
@@ -75,5 +70,10 @@ const fetchItems = gql`
          }
      }
 `;
+
+const mapStateToProps = state => ({
+    tags: state.tags.tagData
+});
+
 
 export default graphql(fetchItems)(Items);

@@ -2,16 +2,18 @@ import React from 'react';
 import AppBar from 'material-ui/AppBar';
 import { Link } from 'react-router-dom';
 import * as firebase from 'firebase';
+import { connect } from 'react-redux';
 
 import FilterField from '../FilterField';
+import { filterTags } from '../../redux/modules/tags';
 import RaisedButton from 'material-ui/RaisedButton';
 import './styles.css';
 import logo from '../../images/boomtown-logo.svg';
 
-const Header = () => {
+const Header = ({ dispatch, tags }) => {
 
     let location = window.location.href;
-    
+
     return (
         
         <AppBar className= "app-bar" title="" style={{'background-color': 'white'}} iconElementLeft = { 
@@ -24,7 +26,8 @@ const Header = () => {
 
                 {location === "http://localhost:3000/" ?
                  <div className="filter-field">
-                    <FilterField />
+                    <FilterField dispatch={dispatch} handleChange={filterTags} tags={tags} />
+                    
                   </div>
                 : false
                 }
@@ -52,8 +55,10 @@ const Header = () => {
 
         </AppBar>
     );
-
 } 
 
+const mapStateToProps = state => ({
+    tags: state.tags.tagData
+});
 
-export default Header;
+export default connect(mapStateToProps)(Header);
