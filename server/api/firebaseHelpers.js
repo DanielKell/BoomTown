@@ -15,7 +15,7 @@ import * as firebase from "firebase";
   firebase.initializeApp(config);
   const firebaseDB = firebase.database();
 
-export const getUser = id => {
+export const getUser = (id) => {
     console.log(id);
     return new Promise((resolve, reject) => {
         firebaseDB.ref(`/users/${id}`).once('value')

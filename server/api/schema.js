@@ -21,7 +21,7 @@ const typeDefs = `
     type User {
         id: ID!
         email: String!
-        fullName: String!
+        fullName: String
         bio: String
         items: [Item]
         borrowedItems: [Item] 

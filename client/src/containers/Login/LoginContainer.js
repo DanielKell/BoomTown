@@ -8,7 +8,6 @@ class LoginContainer extends Component {
 //Firebase - DEAL WITH THIS. Need to connect to the button in 'Login' to fire this request. Also need to hook up redux forms.
 handleSubmit = async (e) => {
 
-        console.log(this.props);
         //FIREBASE SETUP
         const {email, password} = this.props.values.LoginForm.values;
         //THIS WORKS, but you MUST enter stuff into the email/password boxes. Need to put validation checks! And maybe preventDefault

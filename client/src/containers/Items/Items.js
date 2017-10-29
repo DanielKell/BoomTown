@@ -68,6 +68,7 @@ const fetchItems = gql`
              itemOwner{
                  fullName
                  email
+                 bio
              }
              createdOn
              title

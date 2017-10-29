@@ -185,6 +185,8 @@ render() {
 
 // export default Share;
 
+//NEED TO PUT IN A MUTATION QUERY HERE TO GET IT TO SEND TO THE SERVER (SLIDE 59-graphql)
+
 const newItemForm =  reduxForm({
     validate,
   form: 'share'

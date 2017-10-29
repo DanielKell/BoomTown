@@ -1,5 +1,6 @@
 import fetch from 'node-fetch';
-import {getItem, getUsers, getUser, getUserItems, getUserBorrowedItems, addItemNow} from './jsonHelpers';
+import {getItem, getUserItems, getUserBorrowedItems, addItemNow} from './jsonHelpers';
+import { getUser, getUsers } from './firebaseHelpers';
 import {database} from '../index.js';
 const resolveFunctions = {
 
@@ -9,14 +10,14 @@ const resolveFunctions = {
         },
         item(root, { id }, context) {
         // return getItem(id);
-        return context.loaders.getItem.load(id)
+        return context.loaders.Item.load(id)
         },
         users() {
         return getUsers();
         },
         user(root, { id }, context) {
         // return getUser(id);
-        return context.loaders.getUser.load(id)
+        return context.loaders.User.load(id)
         },
         tags() {
         return database.getTags();

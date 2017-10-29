@@ -23,6 +23,9 @@ const pgClient = new Pool({
       return pgClient.query(`SELECT tags.tagid, tags.title FROM tags JOIN itemtags on tags.tagid = itemtags.tagid WHERE itemtags.id = ${id}`).then(res =>{
         return res.rows
       });
+    },
+    getItem(id){
+      return pgClient.query('SELECT * FROM items').then(res => (res.rows));
     }
   };
 };

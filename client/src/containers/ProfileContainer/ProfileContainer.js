@@ -12,19 +12,14 @@ import NotFound from '../NotFound';
 
 class ProfileContainer extends Component {
 
-    componentDidMount() {
-        //this.props.dispatch(fetchProfile(this.props.match.params.id));
-        console.log(this.props);
-    }
-
     render() {
 
         if (this.props.data.loading) return <Loader /> //Will need to refactor this for graphql
         //Refer to slide 55. Need to copy the structure, and use match.params.id
-        if (this.props.singleUserData.id == null) return <NotFound />
+        // if (this.props.data == null) return <NotFound />
 
         return (
-            <Profile singleUserData = {this.props.data.singleUserData}/>
+          <Profile singleUserData = {this.props.data.user}/>
         );
     }
 }
@@ -48,14 +43,22 @@ Profile.propTypes = {
 // export default connect(mapStateToProps)(ProfileContainer);
 
 const profileData = gql`
-query fetchProfile($id: ID!) {
-    user(id: $id) {
-      fullname
-      bio
-      id
-      email
-    }
+query getUser($id: ID!) {
+  user(id: $id) {
+    id
+    fullName
+    email
+    bio
   }
+}
 `;
 
-export default graphql(profileData)(ProfileContainer);
+const UsersWithData = graphql(profileData, {
+    options: ownProps => ({
+        variables: { 
+            id: ownProps.match.params.id
+        }
+    })
+})(ProfileContainer);
+
+export default UsersWithData;

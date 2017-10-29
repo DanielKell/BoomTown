@@ -36,7 +36,7 @@ const Header = ({ dispatch, tags }) => {
             
             iconElementRight = {
             <div className="header-buttons">
-                <Link to="/profile/LAi9TYWxgGhbjgHu1Sm6ZvB1tRP2">
+                <Link to="/profile/K6SdzpduXQfulaIR88K7s99lcOo1">
                     <RaisedButton className="profile-button"
                         label="My Profile"
                         primary={true}
