@@ -14,9 +14,8 @@ class ProfileContainer extends Component {
 
     render() {
         console.log(this.props.data);
-        if (this.props.data.loading) return <Loader /> //Will need to refactor this for graphql
-        //Refer to slide 55. Need to copy the structure, and use match.params.id
-        // if (this.props.data == null) return <NotFound />
+        if (this.props.data.loading) return <Loader /> 
+        if (this.props.data == null) return <NotFound />
 
         return (
           <Profile singleUserData = {this.props.data.user}/>
@@ -33,15 +32,7 @@ Profile.propTypes = {
     })
 };
 
-// const mapStateToProps = (state) => {
-//     return {
-//         singleUserData: state.singleUserData.usersData,
-//         loading: state.singleUserData.loading
-//     };
-// }
-
-// export default connect(mapStateToProps)(ProfileContainer);
-
+//Unable to pull in items data from here but not sure why
 const profileData = gql`
 query getUser($id: ID!) {
   user(id: $id) {
@@ -52,6 +43,7 @@ query getUser($id: ID!) {
       borrowedItems {
           title
       }
+
     }
 }
 `;

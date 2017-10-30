@@ -93,7 +93,7 @@ class Share extends Component {
 render() {
 
     const {finished, stepIndex} = this.state;
-    console.log(this.props);
+    
     return (
         <div className="share-page"> 
             <div className="left-half">
@@ -173,7 +173,7 @@ render() {
                         }}
                         >
                         Click here
-                        </a> to reset the example.
+                        </a> to reset.
                     </p>
                     )}
                 </div>

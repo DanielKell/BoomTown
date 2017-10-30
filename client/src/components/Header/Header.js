@@ -10,7 +10,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import './styles.css';
 import logo from '../../images/boomtown-logo.svg';
 
-const Header = ({ dispatch, tags }) => {
+const Header = ({ dispatch, tags}) => {
 
     let location = window.location.href;
 
@@ -33,7 +33,7 @@ const Header = ({ dispatch, tags }) => {
                 }
             </div>
             } 
-            
+
             iconElementRight = {
             <div className="header-buttons">
                 <Link to="/profile/K6SdzpduXQfulaIR88K7s99lcOo1">
@@ -42,14 +42,12 @@ const Header = ({ dispatch, tags }) => {
                         primary={true}
                     /> 
                 </Link>
-                {/*<Link to="/login">*/}
                     <RaisedButton 
                         label="Logout" 
                         labelColor="white"
                         backgroundColor="black" 
                         onClick={() => firebase.auth().signOut()}
                     />
-                {/*</Link>*/}
             </div>
             }>
 
