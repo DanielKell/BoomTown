@@ -3,7 +3,7 @@ import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { graphql } from 'react-apollo';
 import gql from 'graphql-tag';
 
@@ -18,14 +18,13 @@ class Items extends Component {
         const tags = this.props.tags;
 
         if(tags.length) {
-            return items.filter(item => item.tags.map(tag => tag.title).find(kat => tags.includes(kat)));
+            return items.filter(item => item.tags.map(tag => tag.title).find(tag => tags.includes(tag)));
         }  
         return items;
     }
 
     render() {
 
-        const { tags } = this.props;
         const filteredItems = this.filterItemsAndTags()
         if (this.props.data.loading) return <Loader />
 

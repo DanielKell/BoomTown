@@ -3,11 +3,8 @@ import PropTypes from 'prop-types';
 
 import RaisedButton from 'material-ui/RaisedButton';
 import Paper from 'material-ui/Paper';
-import { Link } from 'react-router-dom';
 import { reduxForm, Field, formValueSelector } from 'redux-form';
 import { connect } from 'react-redux';
-
-import ValidatedTextField from '../../components/ValidatedTextField';
 
 import './styles.css';
 import logo from '../../images/boomtown-logo.svg';
@@ -19,11 +16,9 @@ const validate = values => {
     const errors = {};
     const requiredFields = ['email', 'password'];
     requiredFields.forEach(field => {
-        if (!values[field]) {
-            errors[field] = 'This field is Required';
-        }
+        if (!values[field]) { errors[field] = 'Please fill out this field'; }
     });
-    return errors; //Why doesn't this work??
+    return errors; //This doesn't seem to prevent form submittal yet
 }
 
 const Login = ({ handleSubmit, email, password }) => {
@@ -44,12 +39,6 @@ const Login = ({ handleSubmit, email, password }) => {
             <Paper zDepth={5}>
                 <div className="formContainer">
                     <form autoComplete="off">
-                        {/*<div>
-                            <ValidatedTextField label="Email" />
-                        </div>
-                        <div>
-                            <ValidatedTextField label="Password" />
-                        </div>*/}
 
                         <Field
                             name="email"

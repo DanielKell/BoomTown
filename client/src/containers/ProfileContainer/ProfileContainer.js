@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { graphql } from 'react-apollo';
 import gql from 'graphql-tag';
@@ -7,7 +6,6 @@ import gql from 'graphql-tag';
 import './styles.css';
 import Profile from '../../components/Profile';
 import Loader from '../../components/Loader';
-import {fetchProfile} from '../../redux/modules/profile_data';
 import NotFound from '../NotFound'; 
 
 class ProfileContainer extends Component {

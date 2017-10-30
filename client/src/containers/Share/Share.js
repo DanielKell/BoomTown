@@ -8,7 +8,6 @@ import {
 } from 'material-ui/Stepper';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
-import { TextField } from 'material-ui';
 import Gravatar from 'react-gravatar';
 import { reduxForm, Field, formValueSelector } from 'redux-form';
 import { connect } from 'react-redux';
@@ -43,7 +42,6 @@ import placeholder from '../../images/item-placeholder.jpg';
 
 class Share extends Component {
 
-    //Copied code for the stepper 
     state = {
     finished: false,
     stepIndex: 0,
@@ -93,7 +91,7 @@ class Share extends Component {
 render() {
 
     const {finished, stepIndex} = this.state;
-    
+
     return (
         <div className="share-page"> 
             <div className="left-half">

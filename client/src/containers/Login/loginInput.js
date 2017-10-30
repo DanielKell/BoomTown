@@ -1,6 +1,5 @@
 import React from 'react';
 import { TextField } from 'material-ui';
-import { Field, reduxForm } from 'redux-form';
 
 export const usernameInput = field => (
     <div>
