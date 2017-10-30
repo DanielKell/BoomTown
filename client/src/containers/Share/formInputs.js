@@ -10,11 +10,6 @@ export const textItemTitle = field => (
     />
 );
 
-    /*<TextField 
-        label="Title for Post"
-        hintText="Title"
-    />*/
-
 export const textItemDescription = field => (
     <TextField
         label= "Description for Post"

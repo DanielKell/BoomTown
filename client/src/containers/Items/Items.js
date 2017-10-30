@@ -42,23 +42,9 @@ class Items extends Component {
 }
 
 Items.propTypes = {
-    // CardsWithUserData: PropTypes.arrayOf(PropTypes.object).isRequired,
-    // loading: PropTypes.bool.isRequired
+
 };
 
-//Note: Should try to refactor and separate item data and user data, and then put them together in the below function
-// const mapStateToProps = (state) => {
-//     return {
-//         CardsWithUserData: state.cardAndUserData.CardsWithUserData,
-//         loading: state.cardAndUserData.loading
-//     };
-// }
-
-// export default connect(mapStateToProps)(Items);
-
-// const MoviesList = ({ data }) => (
-//   <ul>{data.movies.map(({title}, i) => <li key={i}>{title}</li>)}</ul>
-// );
 
 const fetchItems = gql`
   query fetchItems {

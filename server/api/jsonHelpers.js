@@ -2,10 +2,6 @@ import fetch from 'node-fetch';
 import pgClient from './pg-resource.js';
 
 export const getItems = function getItems() {
-            // return fetch(`http://localhost:3001/items`)
-            // .then(response => response.json())
-            // .catch(errors => console.log(errors));
-
             return pgClient.query('SELECT * FROM items').then(res => res.rows);
 }
 

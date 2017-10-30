@@ -1,5 +1,4 @@
  
- 
  const MANIPULATE_TAGS = 'MANIPULATE_TAGS';
 
  export function filterTags(tagData) {

@@ -1,5 +1,4 @@
 import React from 'react';
-// import {BrowserRouter as Router, Route} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Header from '../Header';
 import Footer from '../Footer';

@@ -10,10 +10,9 @@ handleSubmit = async (e) => {
 
         e.preventDefault();
         const {email, password} = this.props.values.LoginForm.values;
-        //THIS WORKS, but you MUST enter stuff into the email/password boxes. Need to put validation checks! And maybe preventDefault
+        //THIS WORKS, but you MUST enter stuff into the email/password boxes.
         try {
         await firebase.auth().signInWithEmailAndPassword(email, password);
-        // await firebase.auth().signInWithEmailAndPassword(email, password);
         }
         catch(error) {
         console.log(error);
@@ -22,10 +21,6 @@ handleSubmit = async (e) => {
 
     static propTypes = {
     };
-
-    // login = () => {
-    //     console.log('You clicked the login button.');
-    // }
 
     render() {
         
@@ -41,21 +36,9 @@ handleSubmit = async (e) => {
     }
 }
 
-// export default LoginContainer;
-
 const mapStateToProps = state => ({
     values: state.form,
     auth: state.auth
 });
 
 export default connect(mapStateToProps)(LoginContainer);
-
-//This is used to submit dummy data to the server
-    //     firebase.auth().createUserWithEmailAndPassword("mac@email.com", "redredred")
-    //     .then((user) => firebase.database().ref(`users/${user.uid}`)
-    //     .set({
-    //         email: "mac@email.com",
-    //         fullName: "Mackenzie Keiran",
-    //         bio: "I teach devs to be less bad"
-    //     }));
-    // }
