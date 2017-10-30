@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import * as firebase from 'firebase';
 import Login from './Login';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 
 class LoginContainer extends Component {
 
-//Firebase - DEAL WITH THIS. Need to connect to the button in 'Login' to fire this request. Also need to hook up redux forms.
 handleSubmit = async (e) => {
 
-        //FIREBASE SETUP
+        e.preventDefault();
         const {email, password} = this.props.values.LoginForm.values;
         //THIS WORKS, but you MUST enter stuff into the email/password boxes. Need to put validation checks! And maybe preventDefault
         try {
@@ -28,6 +28,13 @@ handleSubmit = async (e) => {
     // }
 
     render() {
+        
+        if (this.props.auth.user !== null) {
+            return (
+                <Redirect to={"/"} />
+            );
+        }
+
         return (
             <Login handleSubmit={this.handleSubmit} email={this.email} password={this.password}/>
         );
@@ -42,8 +49,6 @@ const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps)(LoginContainer);
-
-
 
 //This is used to submit dummy data to the server
     //     firebase.auth().createUserWithEmailAndPassword("mac@email.com", "redredred")

@@ -13,7 +13,7 @@ import NotFound from '../NotFound';
 class ProfileContainer extends Component {
 
     render() {
-
+        console.log(this.props.data);
         if (this.props.data.loading) return <Loader /> //Will need to refactor this for graphql
         //Refer to slide 55. Need to copy the structure, and use match.params.id
         // if (this.props.data == null) return <NotFound />
@@ -28,7 +28,7 @@ Profile.propTypes = {
     singleUserData: PropTypes.shape({
         bio: PropTypes.string.isRequired,
         email: PropTypes.string.isRequired,
-        fullname: PropTypes.string,
+        fullName: PropTypes.string,
         id: PropTypes.string.isRequired
     })
 };
@@ -45,11 +45,14 @@ Profile.propTypes = {
 const profileData = gql`
 query getUser($id: ID!) {
   user(id: $id) {
-    id
-    fullName
-    email
-    bio
-  }
+      fullName
+      bio
+      id
+      email
+      borrowedItems {
+          title
+      }
+    }
 }
 `;
 

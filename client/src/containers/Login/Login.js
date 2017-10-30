@@ -26,7 +26,10 @@ const validate = values => {
     return errors; //Why doesn't this work??
 }
 
-const Login = ({ handleSubmit, email, password }) => (
+const Login = ({ handleSubmit, email, password }) => {
+
+    return (
+
     <div className="page login">
         <div className="logo">
             <img src={logo} alt="Boomtown Logo" />
@@ -56,27 +59,22 @@ const Login = ({ handleSubmit, email, password }) => (
                             name="password"
                             component={passwordInput}
                         />
-
-                        <Link to="/">
                             <RaisedButton onClick={handleSubmit} className="enterButton" primary fullWidth type="submit">
                                 Enter
                             </RaisedButton>
-                        </Link>
                     </form>
                 </div>
             </Paper>
         </div>
     </div>
-);
+    )};
 
 Login.propTypes = {
     handleSubmit: PropTypes.func.isRequired
 };
 
-// export default Login;
-
 const LoginForm =  reduxForm({
-    validate: validate,
+  validate: validate,
   form: 'LoginForm'
 })(Login);
 

@@ -5,7 +5,7 @@ import { getUser } from './firebaseHelpers'; //switched getUser from above to he
 export default function() {
   return {
     UserOwnedItems: new DataLoader(ids => (
-      Promise.all(ids.map(id => getUserOwnedItems(id))
+      Promise.all(ids.map(id => database.getUserOwnedItems(id))
     ))),
     User: new DataLoader(ids => (
         Promise.all(ids.map(id => getUser(id))
@@ -14,7 +14,7 @@ export default function() {
         Promise.all(ids.map(id => database.getItem(id))
     ))),
     UserBorrowedItems: new DataLoader(ids => (
-      Promise.all(ids.map(id => getUserBorrowedItems(id))
+      Promise.all(ids.map(id => database.getUserBorrowedItems(id))
     ))),
   }
 };

@@ -26,6 +26,12 @@ const pgClient = new Pool({
     },
     getItem(id){
       return pgClient.query('SELECT * FROM items').then(res => (res.rows));
-    }
+    },
+    getUserOwnedItems(id) {
+    return pgClient.query(`SELECT * FROM items WHERE itemOwner='${id}'`).then(res => (res.rows));
+    },
+    getUserBorrowedItems(id){
+      return pgClient.query(`SELECT * FROM items WHERE borrower='${id}'`).then(res => (res.rows));
+    },
   };
 };

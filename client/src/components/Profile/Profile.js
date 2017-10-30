@@ -18,7 +18,7 @@ const Profile = ({singleUserData}) => {
                     </div>
                     <div className="profile-item-data">
                         <CardTitle title="2" subtitle="Items shared" />
-                        <CardTitle title="4" subtitle="Items borrowed" />
+                        <CardTitle title={singleUserData.borrowedItems.length} subtitle="Items borrowed" />
                     </div>
                     <div className="profile-gravatar">
                         <Gravatar size={150} email={singleUserData.email} className="gravatar-image"/>
