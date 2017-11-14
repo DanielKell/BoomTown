@@ -17,6 +17,7 @@ class Items extends Component {
         const items = this.props.data.items;
         const tags = this.props.tags;
 
+
         if(tags.length) {
             return items.filter(item => item.tags.map(tag => tag.title).find(tag => tags.includes(tag)));
         }  
@@ -28,9 +29,12 @@ class Items extends Component {
         const filteredItems = this.filterItemsAndTags()
         if (this.props.data.loading) return <Loader />
 
+        const authUser = this.props.auth.user;
+        console.log(authUser);
+
         return ( 
             <div>
-                <ItemCardList CardsWithUserData={filteredItems} />
+                <ItemCardList CardsWithUserData={filteredItems} AuthData={authUser} />
                 <Link to="/share">
                     <FloatingActionButton className="share-button" backgroundColor="black">
                         <ContentAdd />
@@ -54,6 +58,7 @@ const fetchItems = gql`
                  fullName
                  email
                  bio
+                 id
              }
              createdOn
              title
@@ -70,7 +75,8 @@ const fetchItems = gql`
 `;
 
 const mapStateToProps = state => ({
-    tags: state.tags.tagData
+    tags: state.tags.tagData,
+    auth: state.auth
 });
 
 const ItemsWithData = connect(mapStateToProps)(Items);

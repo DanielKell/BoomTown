@@ -6,7 +6,7 @@ import Gravatar from 'react-gravatar';
 
 import './styles.css';
 
-const ItemCard = ({CardsWithUserData}) => {
+const ItemCard = ({CardsWithUserData, AuthData}) => {
     const moment = require('moment');
     moment().format();
 
@@ -33,7 +33,7 @@ const ItemCard = ({CardsWithUserData}) => {
                     {CardsWithUserData.description}
                 </CardText>  
                 <CardActions>
-                    {CardsWithUserData.borrower
+                    {CardsWithUserData.borrower && (AuthData.uid !== CardsWithUserData.itemOwner.id)
                     ? <RaisedButton label="Borrow" primary={true} backgroundColor="black" labelColor="white"/>
                     :false}
                 </CardActions>

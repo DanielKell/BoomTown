@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import ItemCard from '../ItemCard';
 import './styles.css';
 
-const ItemCardList = ({CardsWithUserData}) => {
+const ItemCardList = ({CardsWithUserData, AuthData}) => {
 
     return (
         <Masonry
@@ -16,6 +16,7 @@ const ItemCardList = ({CardsWithUserData}) => {
                 <ItemCard 
                     CardsWithUserData={item} 
                     key={item.title} 
+                    AuthData={AuthData}
                 />
               )) }
         </Masonry>
