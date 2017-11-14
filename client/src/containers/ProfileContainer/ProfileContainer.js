@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'react-apollo';
 import gql from 'graphql-tag';
+import { connect } from 'react-redux';
 
 import './styles.css';
 import Profile from '../../components/Profile';
@@ -14,8 +15,9 @@ class ProfileContainer extends Component {
         if (this.props.data.loading) return <Loader /> 
         if (this.props.data == null) return <NotFound />
         console.log(this.props.data);
+        const authUser = this.props.auth.user;
         return (
-          <Profile singleUserData = {this.props.data.user}/>
+          <Profile singleUserData = {this.props.data.user} AuthData={authUser} />
         );
     }
 }
@@ -46,6 +48,7 @@ query getUser($id: ID!) {
                 fullName
                 email
                 bio
+                id
             }
             createdOn
             title
@@ -57,10 +60,17 @@ query getUser($id: ID!) {
                 id 
                 fullName
             }
+            
         }
     }
 }
 `;
+
+const mapStateToProps = state => ({
+    auth: state.auth
+});
+
+const ProfileContainerWithAuth = connect(mapStateToProps)(ProfileContainer);
 
 const UsersWithData = graphql(profileData, {
     options: ownProps => ({
@@ -68,6 +78,6 @@ const UsersWithData = graphql(profileData, {
             id: ownProps.match.params.id
         }
     })
-})(ProfileContainer);
+})(ProfileContainerWithAuth);
 
 export default UsersWithData;

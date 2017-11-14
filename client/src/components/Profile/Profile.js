@@ -7,11 +7,9 @@ import Masonry from 'react-masonry-component';
 import ItemCard from '../ItemCard';
 import './styles.css';
 
-const Profile = ({singleUserData}) => {
-        console.log(singleUserData);
+const Profile = ({singleUserData, AuthData}) => {
 
         const { items } = singleUserData;
-        console.log(items);
 
     return (
         <div>
@@ -39,6 +37,7 @@ const Profile = ({singleUserData}) => {
                     <ItemCard 
                         CardsWithUserData={item} 
                         key={item.title} 
+                        AuthData={AuthData}
                     />
                 )) }
             </Masonry>
