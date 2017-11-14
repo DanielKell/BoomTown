@@ -29,7 +29,7 @@ Users must log in to their account to gain access to the website. I have yet to 
 # Project Learnings/Takeaways
 This project helped reinforce best practices and how to setup a webapp built in React, when to use Redux vs GraphQL, how to send and query data from PostgresQL, and user authentication with Firebase. This project is a work in progress as it is very large 
 
-#Things left to do:
+# Things left to do:
 Login:
 - Remove bug of login form crashing without input in boxes (disable button)
 - Remove profile/logout buttons from login page
