@@ -12,6 +12,7 @@ const pgClient = new Pool({
   connectionTimeoutMillis: 2000,
 });
 
+//Note: All queries must be lowercase, and lowercase on postico! 
   return {
     getItems(){
       return pgClient.query("SELECT * FROM items").then(res => (res.rows));
@@ -28,7 +29,7 @@ const pgClient = new Pool({
       return pgClient.query('SELECT * FROM items').then(res => (res.rows));
     },
     getUserOwnedItems(id) {
-    return pgClient.query(`SELECT * FROM items WHERE itemOwner='${id}'`).then(res => (res.rows));
+    return pgClient.query(`SELECT * FROM items WHERE itemowner='${id}'`).then(res => (res.rows));
     },
     getUserBorrowedItems(id){
       return pgClient.query(`SELECT * FROM items WHERE borrower='${id}'`).then(res => (res.rows));

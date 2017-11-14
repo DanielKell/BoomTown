@@ -23,9 +23,9 @@ const resolveFunctions = {
     },
 
     Item: {
-    itemOwner(items, args, context){
-      if (!items.itemOwner) return null
-      return context.loaders.User.load(items.itemOwner)
+    itemOwner(item, args, context){
+      if (!item.itemowner) return null
+      return context.loaders.User.load(item.itemowner)
     },
     borrower(items, args, context){
       if (!items.borrower) return null

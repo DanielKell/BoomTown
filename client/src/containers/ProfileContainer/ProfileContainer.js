@@ -11,10 +11,9 @@ import NotFound from '../NotFound';
 class ProfileContainer extends Component {
 
     render() {
-        console.log(this.props.data);
         if (this.props.data.loading) return <Loader /> 
         if (this.props.data == null) return <NotFound />
-
+        console.log(this.props.data);
         return (
           <Profile singleUserData = {this.props.data.user}/>
         );
@@ -34,14 +33,31 @@ Profile.propTypes = {
 const profileData = gql`
 query getUser($id: ID!) {
   user(id: $id) {
-      fullName
-      bio
-      id
-      email
-      borrowedItems {
-          title
+        fullName
+        bio
+        id
+        email
+        borrowedItems {
+            title
       }
-
+        items {
+            imageUrl
+            itemOwner{
+                fullName
+                email
+                bio
+            }
+            createdOn
+            title
+            tags {
+                title
+            }
+            description
+            borrower {
+                id 
+                fullName
+            }
+        }
     }
 }
 `;

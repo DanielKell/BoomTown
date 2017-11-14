@@ -15,7 +15,7 @@ const ItemCardList = ({CardsWithUserData}) => {
            { CardsWithUserData.map((item) => (
                 <ItemCard 
                     CardsWithUserData={item} 
-                    key={item.id} 
+                    key={item.title} 
                 />
               )) }
         </Masonry>

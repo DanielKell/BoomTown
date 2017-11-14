@@ -44,11 +44,10 @@ const ItemCard = ({CardsWithUserData}) => {
 
 ItemCard.propTypes = {
     CardsWithUserData: PropTypes.shape({
-        available: PropTypes.bool.isRequired,
-        borrower: PropTypes.string,
+        borrower: PropTypes.object,
         createdOn: PropTypes.string.isRequired,
         description: PropTypes.string.isRequired,
-        id: PropTypes.number.isRequired,
+        // id: PropTypes.number.isRequired,
         imageUrl: PropTypes.string.isRequired,
         user: PropTypes.shape({
             bio: PropTypes.string.isRequired,

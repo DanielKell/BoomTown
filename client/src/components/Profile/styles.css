@@ -1,12 +1,13 @@
 .profile-card {
-    height: 30%;
     width:80%;
     margin: 0 auto;
     margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .card-structure {
     display: flex;
+    justify-content: space-between;
     padding: 20px 40px;
 }
 
@@ -17,4 +18,10 @@
 
 .gravatar-image {
     border-radius: 80px;
+}
+
+.masonry-styling {
+    width: 100vw;
+    max-width: 1140px;
+    margin: 0 auto;
 }
