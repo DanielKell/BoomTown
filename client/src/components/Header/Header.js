@@ -10,7 +10,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import './styles.css';
 import logo from '../../images/boomtown-logo.svg';
 
-const Header = ({ dispatch, tags}) => {
+const Header = ({ dispatch, tags, auth}) => {
 
     let location = window.location.href;
 
@@ -36,12 +36,15 @@ const Header = ({ dispatch, tags}) => {
 
             iconElementRight = {
             <div className="header-buttons">
-                <Link to="/profile/K6SdzpduXQfulaIR88K7s99lcOo1">
+                {auth.user ? 
+                <Link to={`/profile/${auth.user.uid}`}>
                     <RaisedButton className="profile-button"
                         label="My Profile"
                         primary={true}
                     /> 
                 </Link>
+                : null
+                }
                     <RaisedButton 
                         label="Logout" 
                         labelColor="white"
@@ -50,13 +53,13 @@ const Header = ({ dispatch, tags}) => {
                     />
             </div>
             }>
-
         </AppBar>
     );
 } 
 
 const mapStateToProps = state => ({
-    tags: state.tags.tagData
+    tags: state.tags.tagData,
+    auth: state.auth
 });
 
 export default connect(mapStateToProps)(Header);
