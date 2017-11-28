@@ -8,6 +8,7 @@ import fetchSingleUserData from './modules/profile_data';
 import authenticationData from './modules/authenticate';
 import tagData from './modules/tags';
 import client from '../config/apolloClient';
+import shareData from './modules/share_data';
 
 export default combineReducers({
     apollo: client.reducer(),
@@ -15,5 +16,6 @@ export default combineReducers({
     singleUserData: fetchSingleUserData,
     auth: authenticationData,
     form: formReducer,
-    tags: tagData
+    tags: tagData,
+    share: shareData
 });

@@ -14,9 +14,12 @@ import { connect } from 'react-redux';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 
+import { setImageUpload, setImageUploadPlaceHolder } from '../../redux/modules/share_data';
 import {textItemTitle, textItemDescription} from './formInputs';
 import './styles.css';
 import placeholder from '../../images/item-placeholder.jpg';
+import firebase from '../../firebaseSetup';
+
 
 //Setting up all the validation for the form
 
@@ -135,9 +138,20 @@ render() {
         { id: 14, title: 'Recreational Equipment' },
     ];
 
+//ADDED
+  const handleImageUpload = (input) => {
+     if (input.target.files && input.target.files[0]) {
+       const reader = new FileReader();
+       this.props.dispatch(setImageUpload(input.target.files[0]));
+       reader.onload = (e) => {
+         this.props.dispatch(setImageUploadPlaceHolder(e.target.result));
+       };
+       reader.readAsDataURL(input.target.files[0]);
+     }
+   }
+
     const {finished, stepIndex} = this.state;
     
-    // const itemTags = this.props.newItem.tags.map(a => a.title);
     console.log(this.props.newItem);
     
     return (
@@ -146,7 +160,7 @@ render() {
                 <div className="share-card">
                     <Card>
                         <CardMedia>
-                        <img src={placeholder} alt="" />
+                        <img src={this.props.imageData ? this.props.imageData : placeholder} alt="" />
                         </CardMedia>  
                         <CardHeader
                             subtitle="a few seconds ago"
@@ -176,6 +190,7 @@ render() {
                         <p>
                             We live in a visual culture. Upload an image of the item you're sharing.
                         </p> 
+                        <input name="imageUpload" type="file" accept="image/*" onChange={handleImageUpload} />
                         {this.renderStepActions(0)} 
                         </StepContent>
                     </Step>
@@ -258,6 +273,8 @@ function mapStateToProps(state) {
     const values = formValueSelector('share');
     return {
         newItem: values(state, "itemTitle", "itemDescription", "tags"),
+        imageFile: state.share.imageFile,
+        imageData: state.share.imageData
          //Include all the 'name's from above fields
     };
 }
