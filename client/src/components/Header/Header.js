@@ -13,7 +13,6 @@ import logo from '../../images/boomtown-logo.svg';
 const Header = ({ dispatch, tags, auth}) => {
 
     let location = window.location.href;
-
     return (
         
         <AppBar className= "app-bar" title="" style={{'background-color': 'white'}} iconElementLeft = { 
@@ -24,13 +23,12 @@ const Header = ({ dispatch, tags, auth}) => {
                     </Link>
                 </div>
 
-                {location === "http://localhost:3000/" ?
+                {/*{location === "http://localhost:3000/login" &&*/}
                  <div className="filter-field">
                     <FilterField dispatch={dispatch} handleChange={filterTags} tags={tags} />
                     
                   </div>
-                : false
-                }
+                
             </div>
             } 
 

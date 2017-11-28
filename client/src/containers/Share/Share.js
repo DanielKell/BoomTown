@@ -11,6 +11,8 @@ import FlatButton from 'material-ui/FlatButton';
 import Gravatar from 'react-gravatar';
 import { reduxForm, Field, formValueSelector } from 'redux-form';
 import { connect } from 'react-redux';
+import SelectField from 'material-ui/SelectField';
+import MenuItem from 'material-ui/MenuItem';
 
 import {textItemTitle, textItemDescription} from './formInputs';
 import './styles.css';
@@ -88,10 +90,56 @@ class Share extends Component {
     );
   }
 
+
+
 render() {
 
-    const {finished, stepIndex} = this.state;
+    const renderSelectField = ({ input, label, meta: { touched, error }, children, ...custom }) => (
+    <SelectField
+        multiple
+        floatingLabelText={label}
+        errorText={touched && error}
+        {...input}
+        onChange={(event, index, value) => input.onChange(value)}
+        {...custom}
+    >
+        {children}
+    </SelectField>
+);
 
+    const renderMenuItems = (tags) => {
+
+        return tags.map((tag) => (
+            <MenuItem
+                key={tag.id}
+                insetChildren
+                checked={
+                    this.props.newItem &&
+                    this.props.newItem.values &&
+                    this.props.newItem.values.tags &&
+                    this.props.newItem.values.tags.includes(tag.title)
+                }
+                value={tag.title} //May need to change this back to tag.id for query
+                primaryText={tag.title}
+            />
+        ));        
+    };
+
+    const listOfTags = [
+        { id: 8, title: 'Tools' },
+        { id: 9, title: 'Household Items' },
+        { id: 10, title: 'Physical Media' },
+        { id: 11, title: 'Musical Instruments' },
+        { id: 12, title: 'Sporting Goods' },
+        { id: 13, title: 'Electronics' },
+        { id: 14, title: 'Recreational Equipment' },
+    ];
+
+    const {finished, stepIndex} = this.state;
+    
+    // const itemTags = this.props.newItem.tags.map(a => a.title);
+    console.log(this.props.newItem);
+    
     return (
         <div className="share-page"> 
             <div className="left-half">
@@ -105,14 +153,20 @@ render() {
                             avatar={<Gravatar email="" className="gravatar-image"/>}
                         />
                         <CardTitle 
-                            title={this.props.newItem.itemTitle}
-                            subtitle={this.props.newItem.itemDescription}
+                            title={this.props.newItem.itemTitle ? this.props.newItem.itemTitle : "Amazing Item Title"}
+                            
+                            subtitle={this.props.newItem.tags ? this.props.newItem.tags.join(', ') : ""}
+                        />
+                        <CardTitle
+                            subtitle={this.props.newItem.itemDescription ? this.props.newItem.itemDescription : "Profound item description."}
                         />
                         <CardText>
                         </CardText>  
                     </Card>
                 </div>
             </div>
+
+
             <div className="right-half">
                     <div style={{maxWidth: 380, maxHeight: 400, margin: 'auto'}}>
                     <Stepper activeStep={stepIndex} orientation="vertical">
@@ -148,6 +202,15 @@ render() {
                         <p>
                             To share an item, you'll add it to our list of categories. You can select multiple categories.
                         </p>
+
+                            <Field
+                                name="tags"
+                                label="Item Categories"
+                                component={renderSelectField}
+                            >
+                                {renderMenuItems(listOfTags)}
+                            </Field>
+
                         {this.renderStepActions(2)}
                         </StepContent>
                     </Step>
@@ -157,6 +220,9 @@ render() {
                         <p>
                             Great! If you're happy with everything, tap the button.
                         </p>
+                        <button>
+                            Submit
+                        </button>
                         {this.renderStepActions(3)}
                         </StepContent>
                     </Step>
@@ -191,7 +257,8 @@ const newItemForm =  reduxForm({
 function mapStateToProps(state) {
     const values = formValueSelector('share');
     return {
-        newItem: values(state, "itemTitle", "itemDescription") //Include all the 'name's from above fields
+        newItem: values(state, "itemTitle", "itemDescription", "tags"),
+         //Include all the 'name's from above fields
     };
 }
 
