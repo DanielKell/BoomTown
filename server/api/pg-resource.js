@@ -34,5 +34,24 @@ const pgClient = new Pool({
     getUserBorrowedItems(id){
       return pgClient.query(`SELECT * FROM items WHERE borrower='${id}'`).then(res => (res.rows));
     },
+
+    addCardItemHelper(title, description, imageurl, itemowner, tags){
+      pgClient.query(`INSERT INTO items (title, description, imageurl, itemowner) VALUES ('${title}', '${description}', '${imageurl}', '${itemowner}') RETURNING id`)
+        .then(res => {
+          const sqlValues = tags.reduce((acc, curr, index, array) => {
+            if(index < array.length-1) {
+              acc = (`${acc}('${res.rows[0].id}', '${curr}'),`)
+            }else{
+              acc = (`${acc}(${res.rows[0].id}, ${curr})`)
+            }
+            return acc
+            },[]);
+          pgClient.query(`INSERT INTO itemtags (itemid, tagid) VALUES ${sqlValues}`)
+        });
+    }
+
+
+
+
   };
 };

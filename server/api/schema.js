@@ -11,7 +11,6 @@ const typeDefs = `
         tags: [Tag]
         itemOwner: User!
         createdOn: String!
-
         borrower: User
     }
     type Tag {
@@ -37,8 +36,8 @@ const typeDefs = `
       type Mutation { 
         addItem (
             title: String!
-            imageUrl: String
-            itemOwner: ID!
+            imageurl: String
+            itemowner: ID!
             description: String
             tags: [String]
         ): Item

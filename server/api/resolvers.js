@@ -45,9 +45,9 @@ const resolveFunctions = {
     },
     
     Mutation: {
-        addItem(root, {title, imageUrl, description, itemOwner, tags}) {
-            return addItemNow(title, imageUrl, description, itemOwner, tags);
-      }
+        addItem(root, {title, imageurl, description, itemowner, tags}) {
+            return database.addCardItemHelper(title, imageurl, description, itemowner, tags);
+    }
   }
 }
 

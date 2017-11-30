@@ -13,6 +13,8 @@ import { reduxForm, Field, formValueSelector } from 'redux-form';
 import { connect } from 'react-redux';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
+import { graphql, compose } from 'react-apollo';
+import gql from 'graphql-tag';
 
 import { setImageUpload, setImageUploadPlaceHolder } from '../../redux/modules/share_data';
 import {textItemTitle, textItemDescription} from './formInputs';
@@ -93,8 +95,6 @@ class Share extends Component {
     );
   }
 
-
-
 render() {
 
     const renderSelectField = ({ input, label, meta: { touched, error }, children, ...custom }) => (
@@ -138,7 +138,7 @@ render() {
         { id: 14, title: 'Recreational Equipment' },
     ];
 
-//ADDED
+//Handling image upload
   const handleImageUpload = (input) => {
      if (input.target.files && input.target.files[0]) {
        const reader = new FileReader();
@@ -148,6 +148,42 @@ render() {
        };
        reader.readAsDataURL(input.target.files[0]);
      }
+   }
+
+//Handling submittal to server
+
+  let submitShareItem = async () => {
+    //  const { imageFile, selectedTags, user, mutate, shareDateNow } = this.props;
+    //  const { itemTitle, itemDescription } = this.props.inputValues;
+    //  var storageRef = firebase.storage().ref();
+    //  const imageURL = await storageRef.child(`images/${user.id}/${imageFile.name}-${shareDateNow}`)
+    //         .put(imageFile)
+    //         .then((snapshot) => {
+    //            return snapshot.downloadURL;
+    //         })
+ 
+    //  const allSelectedTagsID = selectedTags.map((tags) => tags.id);
+ 
+    const { mutate } = this.props;
+     mutate({ 
+    //    variables: { 
+    //      title: itemTitle,
+    //      description: itemDescription,
+    //      imageurl: imageURL,
+    //      tags: allSelectedTagsID,
+    //      itemowner: user.id
+    //    }
+       variables: { 
+         title: 'testTitle',
+         description: 'testDescription',
+         imageurl: 'https://firebasestorage.googleapis.com/v0/b/boomtown-dfdd8.appspot.com/o/demo-images%2Fcamp-stove.jpg?alt=media',
+         tags: '5',
+         itemowner: 'K6SdzpduXQfulaIR88K7s99lcOo1'
+       }
+     })
+     .then( res => {
+       console.log(res);
+     });
    }
 
     const {finished, stepIndex} = this.state;
@@ -235,7 +271,7 @@ render() {
                         <p>
                             Great! If you're happy with everything, tap the button.
                         </p>
-                        <button>
+                        <button onClick={submitShareItem}>
                             Submit
                         </button>
                         {this.renderStepActions(3)}
@@ -264,6 +300,27 @@ render() {
 
 //NEED TO PUT IN A MUTATION QUERY HERE TO SEND DATA TO THE SERVER (SLIDE 59-graphql)
 
+const addItem = gql`
+   mutation addItem(
+     $title: String!
+     $description: String
+     $imageurl: String
+     $tags: [String]
+     $itemowner: ID!
+   ) {
+     addItem(
+       title:$title
+       description:$description
+       imageurl:$imageurl
+       tags:$tags
+       itemowner:$itemowner
+     ){
+       title
+       description
+     }
+   }
+ `
+
 const newItemForm =  reduxForm({
     validate,
   form: 'share'
@@ -279,4 +336,6 @@ function mapStateToProps(state) {
     };
 }
 
-export default connect (mapStateToProps)(newItemForm);
+const share1 = graphql(addItem)(newItemForm);
+
+export default connect (mapStateToProps)(share1);
