@@ -53,8 +53,8 @@ Items.propTypes = {
 const fetchItems = gql`
   query fetchItems {
         items {
-             imageUrl
-             itemOwner{
+             imageurl
+             itemowner{
                  fullName
                  email
                  bio

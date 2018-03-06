@@ -28,8 +28,8 @@ export function getTags() {
 }
 
 // export const getItemOwner = function getItemOwner(items) {
-//         if (!items.itemOwner) return null;
-//         return fetch(`http://localhost:3001/users/${items.itemOwner}`)
+//         if (!items.itemowner) return null;
+//         return fetch(`http://localhost:3001/users/${items.itemowner}`)
 //         .then(response => response.json())
 //         .catch(errors => console.log(errors));
 // }
@@ -43,7 +43,7 @@ export function getTags() {
 
 export const getUserItems = function getUserItems(id) {
             if (!id) return null
-            return fetch(`http://localhost:3001/items/?itemOwner=${id}`)
+            return fetch(`http://localhost:3001/items/?itemowner=${id}`)
             .then(response => response.json())
             .catch(errors => console.log(errors));
 }
@@ -55,26 +55,26 @@ export const getUserBorrowedItems = function getUserBorrowedItems(id) {
             .catch(errors => console.log(errors));
 }
 
-export const addItemNow = function addItemNow(title, imageUrl, description, itemOwner, tags) {
-            const tzOffset = (new Date()).getTimezoneOffset() * 60000; // offset in milliseconds
-            const localTime = `${(new Date(Date.now() - tzOffset)).toISOString().slice(0, -1).replace('T', ' ')}-07`;
-            const newItem = {
-            title: title,
-            imageUrl: imageUrl,
-            itemOwner: itemOwner,
-            description: description,
-            tags: tags,
-            createdOn: localTime,
-            available: true,
-            borrower: null
-        }
-        return fetch('http://localhost:3001/items', {
-            method: 'post',
-            headers: {
-                'Accept': 'application/json, text/plain, */*',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(newItem)
-            }).then(res=>res.json())
-            .catch(error => console.log(error))
-}
+// export const addItemNow = function addItemNow(title, imageurl, description, itemowner, tags) {
+//             const tzOffset = (new Date()).getTimezoneOffset() * 60000; // offset in milliseconds
+//             const localTime = `${(new Date(Date.now() - tzOffset)).toISOString().slice(0, -1).replace('T', ' ')}-07`;
+//             const newItem = {
+//             title: title,
+//             imageurl: imageurl,
+//             itemowner: itemowner,
+//             description: description,
+//             tags: tags,
+//             createdOn: localTime,
+//             available: true,
+//             borrower: null
+//         }
+//         return fetch('http://localhost:3001/items', {
+//             method: 'post',
+//             headers: {
+//                 'Accept': 'application/json, text/plain, */*',
+//                 'Content-Type': 'application/json'
+//             },
+//             body: JSON.stringify(newItem)
+//             }).then(res=>res.json())
+//             .catch(error => console.log(error))
+// }

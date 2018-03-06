@@ -41,12 +41,12 @@ export function fetchCardAndUserData() {
                         id: item.id,
                         title: item.title,
                         description: item.description,
-                        imageUrl: item.imageUrl,
+                        imageurl: item.imageurl,
                         tags: item.tags,
                         createdOn: item.createdOn,
                         available: item.available,
                         borrower: item.borrower,
-                        user: users.find(user => user.id === item.itemOwner)
+                        user: users.find(user => user.id === item.itemowner)
                     }
                 })
                 dispatch(fetchData(itemsWithUsers));

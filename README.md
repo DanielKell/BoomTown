@@ -1,10 +1,14 @@
 # Boomtown
 
-The goal of this project is to create a web-based application to support a local sharing economy. Functionally, the app allows users to browse all items and see which have been borrowed by other users. It also has access to user profiles, where the users can see how many items they've borrowed/lent, and which items are theirs.
+Boomtown is a web app that allows users to share, lend, and borrow items from each other. Users can browse all items and see which have been borrowed by other users. It also has access to user profiles, where the users can see how many items they've borrowed/lent, and which items are theirs.
 
-Items are stored in a Postgres database, and the user is able to both "borrow" items from others, and post new items they would like to share. 
+Users must log in to their account to gain access to the website. Currently there is support to sign in with only one account, username: mandi@email.com  password: redredred
 
-Users must log in to their account to gain access to the website. I have yet to add a signup form, but in the meantime you can sign in with username: mandi@email.com  password: redredred
+For the backend, items are stored in a Postgres database, and the user is able to both "borrow" items from others, and post new items they would like to share. 
+
+## Desktop Version
+
+![](/screenshots/BoomtownDesktop.jpg)
 
 # Built Using 
 

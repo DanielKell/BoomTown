@@ -4,11 +4,11 @@
       "id": 1,
       "title": "Miscellaneous Dishes",
       "description": "Eat off of real plates and bowls at your next dinner party. Adulting FTW.",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/boomtown-dfdd8.appspot.com/o/demo-images%2Fmisc-dishes.jpg?alt=media",
+      "imageurl": "https://firebasestorage.googleapis.com/v0/b/boomtown-dfdd8.appspot.com/o/demo-images%2Fmisc-dishes.jpg?alt=media",
       "tags": [
         "Household Items"
       ],
-      "itemOwner": "TyHcYnSocuOg6PmWQivgxerTLcq2",
+      "itemowner": "TyHcYnSocuOg6PmWQivgxerTLcq2",
       "createdOn": "2017-08-09",
       "available": true,
       "borrower": null
@@ -17,12 +17,12 @@
       "id": 2,
       "title": "Camp Stove",
       "description": "All you need to cook gourmet meals on your next trek into the wild.",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/boomtown-dfdd8.appspot.com/o/demo-images%2Fcamp-stove.jpg?alt=media",
+      "imageurl": "https://firebasestorage.googleapis.com/v0/b/boomtown-dfdd8.appspot.com/o/demo-images%2Fcamp-stove.jpg?alt=media",
       "tags": [
         "Household Items",
         "Recreational Equipment"
       ],
-      "itemOwner": "dQg4HT262FYOiuOUIRj1xrXjOva2",
+      "itemowner": "dQg4HT262FYOiuOUIRj1xrXjOva2",
       "createdOn": "2017-08-08",
       "available": false,
       "borrower": "LAi9TYWxgGhbjgHu1Sm6ZvB1tRP2"
@@ -31,11 +31,11 @@
       "id": 3,
       "title": "Flute",
       "description": "Like-new flute to lend. C'mon, you know you want to play it...",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/boomtown-dfdd8.appspot.com/o/demo-images%2Fflute.jpg?alt=media",
+      "imageurl": "https://firebasestorage.googleapis.com/v0/b/boomtown-dfdd8.appspot.com/o/demo-images%2Fflute.jpg?alt=media",
       "tags": [
         "Musical Instruments"
       ],
-      "itemOwner": "LAi9TYWxgGhbjgHu1Sm6ZvB1tRP2",
+      "itemowner": "LAi9TYWxgGhbjgHu1Sm6ZvB1tRP2",
       "createdOn": "2017-09-18",
       "available": true,
       "borrower": null
@@ -44,11 +44,11 @@
       "id": 4,
       "title": "Hatchet",
       "description": "Chop things down, show nature who's boss. But be safe—alcoholic beverage not included.",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/boomtown-dfdd8.appspot.com/o/demo-images%2Fhatchet.jpg?alt=media",
+      "imageurl": "https://firebasestorage.googleapis.com/v0/b/boomtown-dfdd8.appspot.com/o/demo-images%2Fhatchet.jpg?alt=media",
       "tags": [
         "Tools"
       ],
-      "itemOwner": "dQg4HT262FYOiuOUIRj1xrXjOva2",
+      "itemowner": "dQg4HT262FYOiuOUIRj1xrXjOva2",
       "createdOn": "2017-09-08",
       "available": true,
       "borrower": null
@@ -57,11 +57,11 @@
       "id": 5,
       "title": "Mix Tape",
       "description": "What's on it? Who knows! Borrow it and find out. Tape deck not included.",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/boomtown-dfdd8.appspot.com/o/demo-images%2Fmix-tape.jpg?alt=media",
+      "imageurl": "https://firebasestorage.googleapis.com/v0/b/boomtown-dfdd8.appspot.com/o/demo-images%2Fmix-tape.jpg?alt=media",
       "tags": [
         "Physical Media"
       ],
-      "itemOwner": "TyHcYnSocuOg6PmWQivgxerTLcq2",
+      "itemowner": "TyHcYnSocuOg6PmWQivgxerTLcq2",
       "createdOn": "2017-09-08",
       "available": false,
       "borrower": "dQg4HT262FYOiuOUIRj1xrXjOva2"
@@ -70,11 +70,11 @@
       "id": 6,
       "title": "Learn to Code Books",
       "description": "Learn HTML, CSS, JavaScript, and jQuery in 800 pages or less.",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/boomtown-dfdd8.appspot.com/o/demo-images%2Fcode-books.jpg?alt=media",
+      "imageurl": "https://firebasestorage.googleapis.com/v0/b/boomtown-dfdd8.appspot.com/o/demo-images%2Fcode-books.jpg?alt=media",
       "tags": [
         "Physical Media"
       ],
-      "itemOwner": "TyHcYnSocuOg6PmWQivgxerTLcq2",
+      "itemowner": "TyHcYnSocuOg6PmWQivgxerTLcq2",
       "createdOn": "2017-08-08",
       "available": true,
       "borrower": null
@@ -83,11 +83,11 @@
       "id": 7,
       "title": "Keyboard",
       "description": "Teach your cat to tickle these elephant-friendly (plastic) ivories.",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/boomtown-dfdd8.appspot.com/o/demo-images%2Fkeyboard.jpg?alt=media",
+      "imageurl": "https://firebasestorage.googleapis.com/v0/b/boomtown-dfdd8.appspot.com/o/demo-images%2Fkeyboard.jpg?alt=media",
       "tags": [
         "Musical Instruments"
       ],
-      "itemOwner": "LAi9TYWxgGhbjgHu1Sm6ZvB1tRP2",
+      "itemowner": "LAi9TYWxgGhbjgHu1Sm6ZvB1tRP2",
       "createdOn": "2017-08-08",
       "available": true,
       "borrower": null
@@ -96,12 +96,12 @@
       "id": 8,
       "title": "Baseball",
       "description": "Lightly-used baseball for you and your friend to enjoy at your next ball tournament.",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/boomtown-dfdd8.appspot.com/o/demo-images%2Fbaseball.jpg?alt=media",
+      "imageurl": "https://firebasestorage.googleapis.com/v0/b/boomtown-dfdd8.appspot.com/o/demo-images%2Fbaseball.jpg?alt=media",
       "tags": [
         "Recreational Equipment",
         "Sporting Goods"
       ],
-      "itemOwner": "TyHcYnSocuOg6PmWQivgxerTLcq2",
+      "itemowner": "TyHcYnSocuOg6PmWQivgxerTLcq2",
       "createdOn": "2017-08-08",
       "available": false,
       "borrower": "LAi9TYWxgGhbjgHu1Sm6ZvB1tRP2"
@@ -110,11 +110,11 @@
       "id": 9,
       "title": "Skateboard",
       "description": "Relive your youth! And try not to seriously injure yourself while doing it!",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/boomtown-dfdd8.appspot.com/o/demo-images%2Fskateboard.jpg?alt=media",
+      "imageurl": "https://firebasestorage.googleapis.com/v0/b/boomtown-dfdd8.appspot.com/o/demo-images%2Fskateboard.jpg?alt=media",
       "tags": [
         "Sporting Goods"
       ],
-      "itemOwner": "LAi9TYWxgGhbjgHu1Sm6ZvB1tRP2",
+      "itemowner": "LAi9TYWxgGhbjgHu1Sm6ZvB1tRP2",
       "createdOn": "2017-08-08",
       "available": false,
       "borrower": "TyHcYnSocuOg6PmWQivgxerTLcq2"
@@ -123,11 +123,11 @@
       "id": 10,
       "title": "Iron and Ironing Board",
       "description": "Dress for the job you want, not the one you have, with freshly pressed shirts and slacks.",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/boomtown-dfdd8.appspot.com/o/demo-images%2Firon-and-board.jpg?alt=media",
+      "imageurl": "https://firebasestorage.googleapis.com/v0/b/boomtown-dfdd8.appspot.com/o/demo-images%2Firon-and-board.jpg?alt=media",
       "tags": [
         "Household Items"
       ],
-      "itemOwner": "TyHcYnSocuOg6PmWQivgxerTLcq2",
+      "itemowner": "TyHcYnSocuOg6PmWQivgxerTLcq2",
       "createdOn": "2017-09-08",
       "available": true,
       "borrower": null
@@ -136,11 +136,11 @@
       "id": 11,
       "title": "Record Player",
       "description": "Required equipment to pass the Hipster School entrance exam.",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/boomtown-dfdd8.appspot.com/o/demo-images%2Frecord-player.jpg?alt=media",
+      "imageurl": "https://firebasestorage.googleapis.com/v0/b/boomtown-dfdd8.appspot.com/o/demo-images%2Frecord-player.jpg?alt=media",
       "tags": [
         "Electronics"
       ],
-      "itemOwner": "dQg4HT262FYOiuOUIRj1xrXjOva2",
+      "itemowner": "dQg4HT262FYOiuOUIRj1xrXjOva2",
       "createdOn": "2017-08-08",
       "available": true,
       "borrower": null
@@ -149,11 +149,11 @@
       "id": 12,
       "title": "Polaroid Camera",
       "description": "In perfect working condition—the original Instagram app.",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/boomtown-dfdd8.appspot.com/o/demo-images%2Fpolaroid.jpg?alt=media",
+      "imageurl": "https://firebasestorage.googleapis.com/v0/b/boomtown-dfdd8.appspot.com/o/demo-images%2Fpolaroid.jpg?alt=media",
       "tags": [
         "Electronics"
       ],
-      "itemOwner": "dQg4HT262FYOiuOUIRj1xrXjOva2",
+      "itemowner": "dQg4HT262FYOiuOUIRj1xrXjOva2",
       "createdOn": "2017-08-08",
       "available": false,
       "borrower": "TyHcYnSocuOg6PmWQivgxerTLcq2"
@@ -162,11 +162,11 @@
       "id": 13,
       "title": "Book Collection",
       "description": "Musty old volumes to enjoy. Includes Shakespeare, Dickens, Poe, and more.",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/boomtown-dfdd8.appspot.com/o/demo-images%2Fbook-collection.jpg?alt=media",
+      "imageurl": "https://firebasestorage.googleapis.com/v0/b/boomtown-dfdd8.appspot.com/o/demo-images%2Fbook-collection.jpg?alt=media",
       "tags": [
         "Physical Media"
       ],
-      "itemOwner": "TyHcYnSocuOg6PmWQivgxerTLcq2",
+      "itemowner": "TyHcYnSocuOg6PmWQivgxerTLcq2",
       "createdOn": "2017-08-08",
       "available": true,
       "borrower": null
@@ -175,11 +175,11 @@
       "id": 14,
       "title": "Drone",
       "description": "Be that guy! Spy on your neighbours from a bird's eye view instead through the drapes.",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/boomtown-dfdd8.appspot.com/o/demo-images%2Fdrone.jpg?alt=media",
+      "imageurl": "https://firebasestorage.googleapis.com/v0/b/boomtown-dfdd8.appspot.com/o/demo-images%2Fdrone.jpg?alt=media",
       "tags": [
         "Electronics"
       ],
-      "itemOwner": "LAi9TYWxgGhbjgHu1Sm6ZvB1tRP2",
+      "itemowner": "LAi9TYWxgGhbjgHu1Sm6ZvB1tRP2",
       "createdOn": "2017-08-08",
       "available": true,
       "borrower": null
@@ -188,11 +188,11 @@
       "id": 15,
       "title": "Playstation",
       "description": "New Playstation to lend for those times when analogue fun just won't do the trick.",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/boomtown-dfdd8.appspot.com/o/demo-images%2Fplaystation.jpg?alt=media",
+      "imageurl": "https://firebasestorage.googleapis.com/v0/b/boomtown-dfdd8.appspot.com/o/demo-images%2Fplaystation.jpg?alt=media",
       "tags": [
         "Electronics"
       ],
-      "itemOwner": "dQg4HT262FYOiuOUIRj1xrXjOva2",
+      "itemowner": "dQg4HT262FYOiuOUIRj1xrXjOva2",
       "createdOn": "2017-08-08",
       "available": true,
       "borrower": null
@@ -201,11 +201,11 @@
       "id": 16,
       "title": "Hammers",
       "description": "Every problem will definitely look like a nail with this set of well-worn hammers.",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/boomtown-dfdd8.appspot.com/o/demo-images%2Fhammers.jpg?alt=media",
+      "imageurl": "https://firebasestorage.googleapis.com/v0/b/boomtown-dfdd8.appspot.com/o/demo-images%2Fhammers.jpg?alt=media",
       "tags": [
         "Tools"
       ],
-      "itemOwner": "TyHcYnSocuOg6PmWQivgxerTLcq2",
+      "itemowner": "TyHcYnSocuOg6PmWQivgxerTLcq2",
       "createdOn": "2017-08-08",
       "available": false,
       "borrower": "dQg4HT262FYOiuOUIRj1xrXjOva2"
@@ -214,11 +214,11 @@
       "id": 17,
       "title": "Canoe",
       "description": "Row, row, your boat. Paddles included. Life is but a dream.",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/boomtown-dfdd8.appspot.com/o/demo-images%2Fcanoe.jpg?alt=media",
+      "imageurl": "https://firebasestorage.googleapis.com/v0/b/boomtown-dfdd8.appspot.com/o/demo-images%2Fcanoe.jpg?alt=media",
       "tags": [
         "Recreational Equipment"
       ],
-      "itemOwner": "LAi9TYWxgGhbjgHu1Sm6ZvB1tRP2",
+      "itemowner": "LAi9TYWxgGhbjgHu1Sm6ZvB1tRP2",
       "createdOn": "2017-08-08",
       "available": true,
       "borrower": null
@@ -227,11 +227,11 @@
       "id": 18,
       "title": "Purple Racing Bike",
       "description": "Get exercise while having fun in the sun on this super-cool bike.",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/boomtown-dfdd8.appspot.com/o/demo-images%2Fpurple-bike.jpg?alt=media",
+      "imageurl": "https://firebasestorage.googleapis.com/v0/b/boomtown-dfdd8.appspot.com/o/demo-images%2Fpurple-bike.jpg?alt=media",
       "tags": [
         "Recreational Equipment"
       ],
-      "itemOwner": "dQg4HT262FYOiuOUIRj1xrXjOva2",
+      "itemowner": "dQg4HT262FYOiuOUIRj1xrXjOva2",
       "createdOn": "2017-08-08",
       "available": true,
       "borrower": null
@@ -240,11 +240,11 @@
       "id": 19,
       "title": "Leica Camera",
       "description": "Range-finding fun for the whole family.",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/boomtown-dfdd8.appspot.com/o/demo-images%2Fleica.jpg?alt=media",
+      "imageurl": "https://firebasestorage.googleapis.com/v0/b/boomtown-dfdd8.appspot.com/o/demo-images%2Fleica.jpg?alt=media",
       "tags": [
         "Electronics"
       ],
-      "itemOwner": "dQg4HT262FYOiuOUIRj1xrXjOva2",
+      "itemowner": "dQg4HT262FYOiuOUIRj1xrXjOva2",
       "createdOn": "2017-08-08",
       "available": true,
       "borrower": null
@@ -253,11 +253,11 @@
       "id": 20,
       "title": "Chain Saw",
       "description": "Great to have on hand because you never know when you'll need to show Mother Nature who's boss.",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/boomtown-dfdd8.appspot.com/o/demo-images%2Fchain-saw.jpg?alt=media",
+      "imageurl": "https://firebasestorage.googleapis.com/v0/b/boomtown-dfdd8.appspot.com/o/demo-images%2Fchain-saw.jpg?alt=media",
       "tags": [
         "Tools"
       ],
-      "itemOwner": "TyHcYnSocuOg6PmWQivgxerTLcq2",
+      "itemowner": "TyHcYnSocuOg6PmWQivgxerTLcq2",
       "createdOn": "2017-08-08",
       "available": false,
       "borrower": "LAi9TYWxgGhbjgHu1Sm6ZvB1tRP2"
@@ -266,19 +266,19 @@
       "id": 21,
       "title": "Lawnmower",
       "description": "Working-condition lawnmower will fulfill all of your grass-cutting needs.",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/boomtown-dfdd8.appspot.com/o/demo-images%2Flawnmower.jpg?alt=media",
+      "imageurl": "https://firebasestorage.googleapis.com/v0/b/boomtown-dfdd8.appspot.com/o/demo-images%2Flawnmower.jpg?alt=media",
       "tags": [
         "Household Items"
       ],
-      "itemOwner": "LAi9TYWxgGhbjgHu1Sm6ZvB1tRP2",
+      "itemowner": "LAi9TYWxgGhbjgHu1Sm6ZvB1tRP2",
       "createdOn": "2017-08-08",
       "available": true,
       "borrower": null
     },
     {
       "title": "I'm dope",
-      "imageUrl": "hi",
-      "itemOwner": "LAi9TYWxgGhbjgHu1Sm6ZvB1tRP2",
+      "imageurl": "hi",
+      "itemowner": "LAi9TYWxgGhbjgHu1Sm6ZvB1tRP2",
       "description": "Hi",
       "tags": [
         "1"
@@ -290,8 +290,8 @@
     },
     {
       "title": "I'm dope",
-      "imageUrl": "hi",
-      "itemOwner": "LAi9TYWxgGhbjgHu1Sm6ZvB1tRP2",
+      "imageurl": "hi",
+      "itemowner": "LAi9TYWxgGhbjgHu1Sm6ZvB1tRP2",
       "description": "Hi",
       "tags": [
         "1"
@@ -303,8 +303,8 @@
     },
     {
       "title": "I'm dope",
-      "imageUrl": "hi",
-      "itemOwner": "LAi9TYWxgGhbjgHu1Sm6ZvB1tRP2",
+      "imageurl": "hi",
+      "itemowner": "LAi9TYWxgGhbjgHu1Sm6ZvB1tRP2",
       "description": "Hi",
       "tags": [
         "1"
@@ -316,8 +316,8 @@
     },
     {
       "title": "I'm dope",
-      "imageUrl": "hi",
-      "itemOwner": "LAi9TYWxgGhbjgHu1Sm6ZvB1tRP2",
+      "imageurl": "hi",
+      "itemowner": "LAi9TYWxgGhbjgHu1Sm6ZvB1tRP2",
       "description": "Hi",
       "tags": [
         "1"
@@ -329,8 +329,8 @@
     },
     {
       "title": "I'm dope",
-      "imageUrl": "hi",
-      "itemOwner": "LAi9TYWxgGhbjgHu1Sm6ZvB1tRP2",
+      "imageurl": "hi",
+      "itemowner": "LAi9TYWxgGhbjgHu1Sm6ZvB1tRP2",
       "description": "Hi",
       "tags": [
         "1"
@@ -342,8 +342,8 @@
     },
     {
       "title": "I'm dope",
-      "imageUrl": "hi",
-      "itemOwner": "LAi9TYWxgGhbjgHu1Sm6ZvB1tRP2",
+      "imageurl": "hi",
+      "itemowner": "LAi9TYWxgGhbjgHu1Sm6ZvB1tRP2",
       "description": "Hi",
       "tags": [
         "1"
@@ -355,8 +355,8 @@
     },
     {
       "title": "I'm dope",
-      "imageUrl": "hi",
-      "itemOwner": "LAi9TYWxgGhbjgHu1Sm6ZvB1tRP2",
+      "imageurl": "hi",
+      "itemowner": "LAi9TYWxgGhbjgHu1Sm6ZvB1tRP2",
       "description": "Hi",
       "tags": [
         "1"
@@ -368,8 +368,8 @@
     },
     {
       "title": "I'm dope",
-      "imageUrl": "hi",
-      "itemOwner": "LAi9TYWxgGhbjgHu1Sm6ZvB1tRP2",
+      "imageurl": "hi",
+      "itemowner": "LAi9TYWxgGhbjgHu1Sm6ZvB1tRP2",
       "description": "Hi",
       "tags": [
         "1"
@@ -381,8 +381,8 @@
     },
     {
       "title": "I'm dope",
-      "imageUrl": "hi",
-      "itemOwner": "LAi9TYWxgGhbjgHu1Sm6ZvB1tRP2",
+      "imageurl": "hi",
+      "itemowner": "LAi9TYWxgGhbjgHu1Sm6ZvB1tRP2",
       "description": "Hi",
       "tags": [
         "1"
@@ -394,8 +394,8 @@
     },
     {
       "title": "I'm dope",
-      "imageUrl": "hi",
-      "itemOwner": "LAi9TYWxgGhbjgHu1Sm6ZvB1tRP2",
+      "imageurl": "hi",
+      "itemowner": "LAi9TYWxgGhbjgHu1Sm6ZvB1tRP2",
       "description": "Hi",
       "tags": [
         "1"
@@ -407,8 +407,8 @@
     },
     {
       "title": "I'm dope",
-      "imageUrl": "hi",
-      "itemOwner": "LAi9TYWxgGhbjgHu1Sm6ZvB1tRP2",
+      "imageurl": "hi",
+      "itemowner": "LAi9TYWxgGhbjgHu1Sm6ZvB1tRP2",
       "description": "Hi",
       "tags": [
         "1"

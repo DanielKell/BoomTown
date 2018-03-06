@@ -43,8 +43,8 @@ query getUser($id: ID!) {
             title
       }
         items {
-            imageUrl
-            itemOwner{
+            imageurl
+            itemowner{
                 fullName
                 email
                 bio

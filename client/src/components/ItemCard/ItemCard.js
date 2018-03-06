@@ -18,12 +18,12 @@ const ItemCard = ({CardsWithUserData, AuthData}) => {
                 <CardMedia 
                     overlay={!CardsWithUserData.borrower && <CardTitle subtitle="UNAVAILABLE" />}
                 >
-                <img src={CardsWithUserData.imageUrl} alt="" />
+                <img src={CardsWithUserData.imageurl} alt="" />
                 </CardMedia>  
                 <CardHeader
-                    title={CardsWithUserData.itemOwner.fullName}
+                    title={CardsWithUserData.itemowner.fullName}
                     subtitle={(moment(CardsWithUserData.createdOn)).fromNow()}
-                    avatar={<Gravatar email={CardsWithUserData.itemOwner.email} className="gravatar-image"/>}
+                    avatar={<Gravatar email={CardsWithUserData.itemowner.email} className="gravatar-image"/>}
                 />
                 <CardTitle 
                     title={CardsWithUserData.title} 
@@ -33,7 +33,7 @@ const ItemCard = ({CardsWithUserData, AuthData}) => {
                     {CardsWithUserData.description}
                 </CardText>  
                 <CardActions>
-                    {CardsWithUserData.borrower && (AuthData.uid !== CardsWithUserData.itemOwner.id)
+                    {CardsWithUserData.borrower && (AuthData.uid !== CardsWithUserData.itemowner.id)
                     ? <RaisedButton label="Borrow" primary={true} backgroundColor="black" labelColor="white"/>
                     :false}
                 </CardActions>
@@ -48,7 +48,7 @@ ItemCard.propTypes = {
         createdOn: PropTypes.string.isRequired,
         description: PropTypes.string.isRequired,
         // id: PropTypes.number.isRequired,
-        imageUrl: PropTypes.string.isRequired,
+        imageurl: PropTypes.string.isRequired,
         user: PropTypes.shape({
             bio: PropTypes.string.isRequired,
             email: PropTypes.string.isRequired,

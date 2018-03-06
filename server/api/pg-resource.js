@@ -35,8 +35,9 @@ const pgClient = new Pool({
       return pgClient.query(`SELECT * FROM items WHERE borrower='${id}'`).then(res => (res.rows));
     },
 
+//Need to fix bug where RETURNING id is not setting up a new id in the database
     addCardItemHelper(title, description, imageurl, itemowner, tags){
-      pgClient.query(`INSERT INTO items (title, description, imageurl, itemowner) VALUES ('${title}', '${description}', '${imageurl}', '${itemowner}') RETURNING id`)
+      pgClient.query(`INSERT INTO items (title, description, imageurl, itemowner) VALUES ($1, $2, $3, $4) RETURNING *`, [title, description, imageurl, itemowner])
         .then(res => {
           const sqlValues = tags.reduce((acc, curr, index, array) => {
             if(index < array.length-1) {
@@ -46,12 +47,9 @@ const pgClient = new Pool({
             }
             return acc
             },[]);
-          pgClient.query(`INSERT INTO itemtags (itemid, tagid) VALUES ${sqlValues}`)
+          pgClient.query(`INSERT INTO itemtags (id, tagid) VALUES ($1)`, [sqlValues])
         });
     }
-
-
-
 
   };
 };

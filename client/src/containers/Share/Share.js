@@ -55,6 +55,7 @@ class Share extends Component {
   };
 
   handleNext = () => {
+    //   console.log(this.props.auth.user.uid);
     const {stepIndex} = this.state;
     this.setState({
       stepIndex: stepIndex + 1,
@@ -174,11 +175,11 @@ render() {
     //      itemowner: user.id
     //    }
        variables: { 
-         title: 'testTitle',
-         description: 'testDescription',
+         title: this.props.newItem.itemTitle,
+         description: this.props.newItem.itemDescription,
          imageurl: 'https://firebasestorage.googleapis.com/v0/b/boomtown-dfdd8.appspot.com/o/demo-images%2Fcamp-stove.jpg?alt=media',
          tags: '5',
-         itemowner: 'K6SdzpduXQfulaIR88K7s99lcOo1'
+         itemowner: this.props.auth.user.uid
        }
      })
      .then( res => {
@@ -188,7 +189,7 @@ render() {
 
     const {finished, stepIndex} = this.state;
     
-    console.log(this.props.newItem);
+    
     
     return (
         <div className="share-page"> 
@@ -298,8 +299,6 @@ render() {
     }
 }
 
-//NEED TO PUT IN A MUTATION QUERY HERE TO SEND DATA TO THE SERVER (SLIDE 59-graphql)
-
 const addItem = gql`
    mutation addItem(
      $title: String!
@@ -331,7 +330,8 @@ function mapStateToProps(state) {
     return {
         newItem: values(state, "itemTitle", "itemDescription", "tags"),
         imageFile: state.share.imageFile,
-        imageData: state.share.imageData
+        imageData: state.share.imageData,
+        auth: state.auth
          //Include all the 'name's from above fields
     };
 }

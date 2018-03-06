@@ -7,9 +7,9 @@ const typeDefs = `
         id: ID!
         title: String!
         description: String
-        imageUrl: String
+        imageurl: String
         tags: [Tag]
-        itemOwner: User!
+        itemowner: User!
         createdOn: String!
         borrower: User
     }

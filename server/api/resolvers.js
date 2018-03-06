@@ -23,7 +23,7 @@ const resolveFunctions = {
     },
 
     Item: {
-    itemOwner(item, args, context){
+    itemowner(item, args, context){
       if (!item.itemowner) return null
       return context.loaders.User.load(item.itemowner)
     },
@@ -45,8 +45,8 @@ const resolveFunctions = {
     },
     
     Mutation: {
-        addItem(root, {title, imageurl, description, itemowner, tags}) {
-            return database.addCardItemHelper(title, imageurl, description, itemowner, tags);
+        addItem(root, {title, description, imageurl, itemowner, tags}) {
+            return database.addCardItemHelper(title, description, imageurl, itemowner, tags);
     }
   }
 }
